@@ -132,6 +132,7 @@
     </div>
     <div class="spacer"></div>
     <div class="health" id="health"><span class="dot ok"></span><span>Loading…</span></div>
+    <button class="btn" onclick="exportSkipTrace()">Skip-trace CSV</button>
     <button class="btn" onclick="exportCSV()">Export CSV</button>
   </header>
 
@@ -464,6 +465,47 @@ function exportCSV() {
   a.href = URL.createObjectURL(new Blob([csv], { type: "text/csv" }));
   a.download = "sheriff-sale-leads.csv";
   a.click();
+}
+
+/* skip-trace export: BatchSkipTracing-format CSV of currently filtered leads.
+   Entities/estates (LLCs, unknown heirs, trusts) are excluded — they can't be skip traced. */
+const SST_CITIES = ["Abington aka Roslyn","Amber aka Maple Glen","Eagleville a/k/a Norristown","Jenkintown aka Meadowbrook","Norristown aka Eagleville","Bala Cynwyd","Blue Bell","Bryn Mawr","East Greenville","East Norriton","Elkins Park","Fort Washington","Gulph Mills","Huntingdon Valley","King of Prussia","Lafayette Hill","Melrose Park","Merion Station","Moreland Township","North Wales","Plymouth Meeting","Red Hill","Upper Hanover","West Conshohocken","Willow Grove","Abington","Ambler","Ardmore","Ardsley","Audubon","Bridgeport","Cheltenham","Collegeville","Conshohocken","Eagleville","Gilbertsville","Glenside","Harleysville","Hatboro","Hatfield","Horsham","Jenkintown","Lansdale","Laverock","Melrose","Montgomeryville","Narberth","Norristown","Pennsburg","Perkiomenville","Phoenixville","Pottstown","Roslyn","Royersford","Rydal","Schwenksville","Souderton","Stowe","Telford","Trappe","Villanova","Wayne","Wyncote","Wyndmoor","Wynnewood"];
+const SST_ENTITY = /llc|l\.l\.c|inc\b|corp|company|estate of|unknown heirs|unknow heirs|successors|association|church|trust\b|holdings|realty|construction|enterpri|school|borough of|pentecosta|and son/i;
+function sstSplitCity(l) {
+  let rest = l.street, city = "";
+  for (const c of SST_CITIES) {
+    if (rest.toLowerCase().endsWith(" " + c.toLowerCase())) {
+      city = c.split(/\s+(?:aka|a\/k\/a)\s+/i)[0];
+      rest = rest.slice(0, rest.length - c.length - 1);
+      break;
+    }
+  }
+  return { street: rest.trim(), city: city || l.city };
+}
+function sstName(def) {
+  let p = def.replace(/\.{3}$/, "").split(/\s*(?:&|,| and )\s*/i)[0].trim();
+  p = p.split(/\s+(?:aka|a\/k\/a|f\/k\/a|fka)\s+/i)[0].trim();
+  const t = p.replace(/[.]/g, "").split(/\s+/).filter(Boolean);
+  if (t.length === 1) return { first: "", last: t[0] };
+  return { first: t[1], last: t[0] }; // CivilView format: Last First Middle
+}
+function exportSkipTrace() {
+  const list = filtered();
+  const qq = v => `"${String(v ?? "").replaceAll('"', '""')}"`;
+  const head = ["First Name","Last Name","Mailing Address","Mailing City","Mailing State","Mailing Zip","Property Address","Property City","Property State","Property Zip","Sheriff #","Sale Date","Judgment"];
+  const rows = []; let skipped = 0;
+  for (const l of list) {
+    if (SST_ENTITY.test(l.defendant)) { skipped++; continue; }
+    const n = sstName(l.defendant);
+    const s = sstSplitCity(l);
+    rows.push([n.first, n.last, s.street, s.city, "PA", l.zip, s.street, s.city, "PA", l.zip, l.sheriff, l.saleDate, l.judgment ?? ""].map(qq).join(","));
+  }
+  const csv = [head.map(qq).join(",")].concat(rows).join("\n");
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([csv], { type: "text/csv" }));
+  a.download = "skiptrace-" + new Date().toISOString().slice(0, 10) + ".csv";
+  a.click();
+  alert(rows.length + " people exported for skip tracing." + (skipped ? " " + skipped + " entity/estate leads excluded (research those manually via the lead links)." : ""));
 }
 
 /* auto-open if already unlocked (must run after all declarations above) */
