@@ -207,7 +207,6 @@ function openApp() {
   document.getElementById("app").style.display = "block";
   boot();
 }
-if (sessionStorage.getItem("ss_gate") === "1") openApp();
 
 /* ============ data ============ */
 let DATA = null, LEADS = [], sortKey = "saleDate", sortDir = 1, booted = false;
@@ -466,6 +465,9 @@ function exportCSV() {
   a.download = "sheriff-sale-leads.csv";
   a.click();
 }
+
+/* auto-open if already unlocked (must run after all declarations above) */
+if (sessionStorage.getItem("ss_gate") === "1") openApp();
 </script>
 </body>
 </html>
