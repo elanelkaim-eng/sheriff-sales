@@ -1,0 +1,33 @@
+name: Daily sheriff sale scrape
+
+on:
+  schedule:
+    - cron: "15 10 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
+
+      - name: Run scraper
+        run: python scrape.py
+
+      - name: Commit refreshed data
+        run: |
+          git config user.name "scraper-bot"
+          git config user.email "actions@github.com"
+          git add leads.json
+          git diff --cached --quiet || git commit -m "Data refresh $(date -u +%F)"
+          git push
