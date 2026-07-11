@@ -228,8 +228,9 @@ async function boot() {
   }
   LEADS = DATA.leads.map(a => {
     const o = { pid: a[0], sheriff: a[1], township: a[2], saleDate: a[3], plaintiff: a[4], defendant: a[5], addr: a[6], judgment: a[7] };
-    const m = o.addr.match(/^(.*?)\s+([A-Za-z .\/'&-]+?)\s+PA\s+(\d{5})$/);
-    o.street = m ? m[1] : o.addr; o.city = m ? m[2] : ""; o.zip = m ? m[3] : "";
+    const m = o.addr.match(/^(.*)\s+PA\s+(\d{5})$/);
+    o.street = m ? m[1] : o.addr; o.zip = m ? m[2] : "";
+    o.city = o.township.replace(/ (Township|Borough)$/, "");
     const s = store.get(o.sheriff);
     o.status = s.status || "new"; o.notes = s.notes || ""; o.follow = s.follow || "";
     return o;
@@ -305,7 +306,7 @@ function render() {
   document.getElementById("rows").innerHTML = list.map(l => `
     <tr onclick="openDrawer('${l.sheriff}')">
       <td class="num" style="white-space:nowrap;">${l.saleDate}<br>${daysChip(l)}</td>
-      <td><div class="addr">${esc(l.street)}</div><div class="muted">${esc(l.city)} PA ${l.zip}</div></td>
+      <td><div class="addr">${esc(l.street)}</div><div class="muted">${esc(l.city)} · PA ${l.zip}</div></td>
       <td>${esc(l.township.replace(/ (Township|Borough)$/, ""))}</td>
       <td>${esc(l.defendant)}</td>
       <td class="muted">${esc(l.plaintiff)}</td>
@@ -334,7 +335,7 @@ function render() {
 function openDrawer(sheriff) {
   const l = LEADS.find(x => x.sheriff === sheriff); if (!l) return;
   const enc = encodeURIComponent;
-  const zq = enc(l.street + " " + l.city + " PA " + l.zip);
+  const zq = enc(l.street + " PA " + l.zip);
   const nameGuess = l.defendant.split(/[&,]| aka | a\/k\/a /i)[0].trim();
   const d = document.getElementById("drawer");
   d.innerHTML = `
@@ -357,8 +358,8 @@ function openDrawer(sheriff) {
 
     <div class="panel"><div class="hd"><span class="eyebrow">Research links</span></div><div class="bd links">
       <a target="_blank" rel="noopener" href="https://www.zillow.com/homes/${zq}_rb/">Zillow ↗</a>
-      <a target="_blank" rel="noopener" href="https://www.truepeoplesearch.com/results?name=${enc(nameGuess)}&citystatezip=${enc(l.city + ", PA " + l.zip)}">TruePeopleSearch ↗</a>
-      <a target="_blank" rel="noopener" href="https://www.fastpeoplesearch.com/name/${enc(nameGuess.replace(/\s+/g, "-"))}_${enc(l.city.replace(/\s+/g, "-"))}-pa">FastPeopleSearch ↗</a>
+      <a target="_blank" rel="noopener" href="https://www.truepeoplesearch.com/results?name=${enc(nameGuess)}&citystatezip=${l.zip}">TruePeopleSearch ↗</a>
+      <a target="_blank" rel="noopener" href="https://www.fastpeoplesearch.com/name/${enc(nameGuess.replace(/\s+/g, "-"))}_${l.zip}">FastPeopleSearch ↗</a>
       <a target="_blank" rel="noopener" href="https://www.google.com/search?q=${enc('"' + nameGuess + '" ' + l.city + " PA")}">Google ↗</a>
       <a target="_blank" rel="noopener" href="https://propertyrecords.montgomerycountypa.gov/">County records ↗</a>
     </div></div>
