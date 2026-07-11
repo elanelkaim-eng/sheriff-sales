@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Sheriff Sale Engine · Elkaim Property Group</title>
+<style>
+  :root {
+    --bg: #faf9f5; --surface: #ffffff; --wash: #f3f1ea; --wash-hi: #f8f6f0;
+    --ink: #29261b; --ink2: #55503f; --ink3: #8a8371; --ink4: #b5ae9c;
+    --line: #e7e3d8; --line2: #d6d1c2;
+    --ever: #1E5A3C; --ever-wash: #e9f2ec; --ever-line: #c4dccd;
+    --rust: #b3402a; --rust-wash: #f9ebe7; --amber: #9a6b0f; --amber-wash: #faf3e0;
+    --info: #2A5FA8; --info-wash: #e9f0f9;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--ink); font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  .num { font-variant-numeric: tabular-nums; }
+  .eyebrow { font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink3); }
+  a { color: var(--ever); }
+  button { font: inherit; cursor: pointer; }
+  select, input, textarea { font: inherit; color: var(--ink); }
+
+  /* ---------- passcode gate ---------- */
+  #gate { position: fixed; inset: 0; background: var(--bg); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+  #gate .card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 36px 40px; width: 340px; text-align: center; box-shadow: 0 2px 14px rgba(41,38,27,.06); }
+  #gate .shield { width: 52px; height: 52px; border-radius: 13px; background: var(--ever); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+  #gate input { width: 100%; padding: 10px 12px; border: 1px solid var(--line2); border-radius: 8px; margin: 16px 0 10px; text-align: center; letter-spacing: .12em; font-size: 15px; }
+  #gate button { width: 100%; padding: 10px; background: var(--ever); color: #fff; border: none; border-radius: 8px; font-weight: 600; }
+  #gate .err { color: var(--rust); font-size: 12.5px; min-height: 18px; margin-top: 8px; }
+
+  /* ---------- app shell ---------- */
+  #app { display: none; max-width: 1240px; margin: 0 auto; padding: 22px 26px 80px; }
+  header.top { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; flex-wrap: wrap; }
+  .logo { width: 38px; height: 38px; border-radius: 10px; background: var(--ever); display: flex; align-items: center; justify-content: center; flex: 0 0 auto; }
+  .title h1 { font-size: 17px; font-weight: 700; }
+  .title .sub { font-size: 12px; color: var(--ink3); }
+  .top .spacer { flex: 1; }
+  .health { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--ink2); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; }
+  .dot.ok { background: var(--ever); } .dot.stale { background: var(--amber); }
+
+  nav.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--line); margin-bottom: 18px; }
+  nav.tabs button { background: none; border: none; padding: 9px 16px; font-size: 13.5px; font-weight: 600; color: var(--ink3); border-bottom: 2px solid transparent; margin-bottom: -1px; }
+  nav.tabs button.on { color: var(--ever); border-bottom-color: var(--ever); }
+
+  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-bottom: 18px; }
+  .kpi { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+  .kpi .v { font-size: 24px; font-weight: 700; margin: 2px 0; }
+  .kpi .s { font-size: 11.5px; color: var(--ink3); }
+
+  .filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; align-items: center; }
+  .filters input[type=search] { padding: 8px 12px; border: 1px solid var(--line2); border-radius: 8px; width: 260px; background: var(--surface); }
+  .filters select { padding: 8px 10px; border: 1px solid var(--line2); border-radius: 8px; background: var(--surface); }
+  .filters .count { font-size: 12px; color: var(--ink3); margin-left: auto; }
+  .btn { padding: 8px 14px; border: 1px solid var(--line2); background: var(--surface); border-radius: 8px; font-size: 13px; font-weight: 600; color: var(--ink2); }
+  .btn.primary { background: var(--ever); border-color: var(--ever); color: #fff; }
+
+  table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  thead th { text-align: left; font-size: 10.5px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--ink3); padding: 10px 12px; background: var(--wash-hi); border-bottom: 1px solid var(--line); cursor: pointer; user-select: none; white-space: nowrap; }
+  tbody td { padding: 10px 12px; border-bottom: 1px solid var(--line); font-size: 13px; vertical-align: top; }
+  tbody tr { cursor: pointer; }
+  tbody tr:hover { background: var(--wash-hi); }
+  .addr { font-weight: 600; }
+  .muted { color: var(--ink3); font-size: 12px; }
+  .chip { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 9px; border-radius: 999px; white-space: nowrap; }
+  .days-urgent { color: var(--rust); background: var(--rust-wash); }
+  .days-soon { color: var(--amber); background: var(--amber-wash); }
+  .days-later { color: var(--ink2); background: var(--wash); }
+  .days-past { color: var(--ink4); background: var(--wash); text-decoration: line-through; }
+
+  /* status colors */
+  .st-new { color: var(--info); background: var(--info-wash); }
+  .st-researching { color: var(--amber); background: var(--amber-wash); }
+  .st-contacted { color: #6b21a8; background: #f3e8ff; }
+  .st-responded { color: var(--ever); background: var(--ever-wash); }
+  .st-negotiating { color: #92400e; background: #fef3c7; }
+  .st-won { color: #fff; background: var(--ever); }
+  .st-dead { color: var(--ink3); background: var(--wash); }
+
+  /* pipeline */
+  .pipe { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; align-items: start; }
+  .col { background: var(--wash); border: 1px solid var(--line); border-radius: 12px; padding: 10px; }
+  .col h3 { font-size: 12px; font-weight: 700; color: var(--ink2); padding: 4px 6px 10px; display: flex; justify-content: space-between; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; margin-bottom: 8px; cursor: pointer; }
+  .card:hover { border-color: var(--line2); }
+  .card .a { font-weight: 600; font-size: 13px; }
+  .card .m { font-size: 11.5px; color: var(--ink3); margin-top: 2px; }
+  .rem { font-size: 11px; font-weight: 700; margin-top: 6px; display: inline-block; padding: 2px 8px; border-radius: 999px; }
+
+  /* drawer */
+  #ovl { position: fixed; inset: 0; background: rgba(41,38,27,.32); display: none; z-index: 100; }
+  #drawer { position: fixed; top: 0; right: 0; bottom: 0; width: min(520px, 100%); background: var(--surface); border-left: 1px solid var(--line); display: none; z-index: 101; overflow-y: auto; padding: 24px 26px 60px; }
+  #drawer.open, #ovl.open { display: block; }
+  #drawer h2 { font-size: 17px; margin: 2px 0 2px; }
+  #drawer .close { position: absolute; top: 16px; right: 18px; background: none; border: none; font-size: 22px; color: var(--ink3); }
+  .panel { border: 1px solid var(--line); border-radius: 12px; margin-top: 14px; overflow: hidden; }
+  .panel > .hd { padding: 9px 14px; background: var(--wash-hi); border-bottom: 1px solid var(--line); }
+  .panel > .bd { padding: 12px 14px; }
+  .kv { display: grid; grid-template-columns: 130px 1fr; gap: 5px 12px; font-size: 13px; }
+  .kv .k { color: var(--ink3); }
+  .links a { display: inline-block; margin: 3px 8px 3px 0; font-size: 13px; }
+  #drawer select, #drawer textarea, #drawer input[type=date] { width: 100%; padding: 8px 10px; border: 1px solid var(--line2); border-radius: 8px; margin-top: 6px; background: var(--surface); }
+  #drawer textarea { min-height: 70px; resize: vertical; }
+  .tpl-btns { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+  .tplout { white-space: pre-wrap; background: var(--wash-hi); border: 1px solid var(--line); border-radius: 8px; padding: 12px; font-size: 12.5px; margin-top: 10px; display: none; }
+
+  .note { font-size: 12px; color: var(--ink3); margin-top: 10px; }
+  @media (max-width: 720px) { .kv { grid-template-columns: 1fr; } .filters input[type=search] { width: 100%; } }
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <div class="card">
+    <div class="shield"><svg width="26" height="26" viewBox="0 0 32 36" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><path d="M16 0l16 6v12c0 10-7 16-16 18C7 34 0 28 0 18V6z"/><path d="M9 18l5 5 9-10"/></svg></div>
+    <div class="eyebrow">Elkaim Property Group</div>
+    <h1 style="font-size:16px;margin-top:4px;">Sheriff Sale Engine</h1>
+    <input id="pw" type="password" placeholder="Passcode" autocomplete="off">
+    <button onclick="tryGate()">Enter</button>
+    <div class="err" id="gateErr"></div>
+  </div>
+</div>
+
+<div id="app">
+  <header class="top">
+    <div class="logo"><svg width="20" height="20" viewBox="0 0 32 36" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><path d="M16 0l16 6v12c0 10-7 16-16 18C7 34 0 28 0 18V6z"/><path d="M9 18l5 5 9-10"/></svg></div>
+    <div class="title">
+      <h1>Sheriff Sale Engine</h1>
+      <div class="sub">Montgomery County, PA · pre-foreclosure outreach</div>
+    </div>
+    <div class="spacer"></div>
+    <div class="health" id="health"><span class="dot ok"></span><span>Loading…</span></div>
+    <button class="btn" onclick="exportCSV()">Export CSV</button>
+  </header>
+
+  <nav class="tabs">
+    <button id="tab-board" class="on" onclick="setTab('board')">Leads board</button>
+    <button id="tab-pipe" onclick="setTab('pipe')">Pipeline</button>
+    <button id="tab-tpl" onclick="setTab('tpl')">Templates</button>
+  </nav>
+
+  <div class="kpis" id="kpis"></div>
+
+  <section id="view-board">
+    <div class="filters">
+      <input type="search" id="q" placeholder="Search address, owner, township, sheriff #…" oninput="render()">
+      <select id="fDate" onchange="render()"><option value="">All sale dates</option></select>
+      <select id="fStatus" onchange="render()">
+        <option value="">All statuses</option>
+        <option>new</option><option>researching</option><option>contacted</option>
+        <option>responded</option><option>negotiating</option><option>won</option><option>dead</option>
+      </select>
+      <label style="font-size:12.5px;color:var(--ink2);display:flex;align-items:center;gap:5px;">
+        <input type="checkbox" id="fHideDead" checked onchange="render()"> Hide dead
+      </label>
+      <span class="count" id="count"></span>
+    </div>
+    <table>
+      <thead><tr>
+        <th onclick="setSort('saleDate')">Sale date</th>
+        <th onclick="setSort('addr')">Property</th>
+        <th onclick="setSort('township')">Township</th>
+        <th onclick="setSort('defendant')">Owner (defendant)</th>
+        <th onclick="setSort('plaintiff')">Plaintiff</th>
+        <th onclick="setSort('sheriff')">Sheriff #</th>
+        <th onclick="setSort('status')">Status</th>
+      </tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <div class="note">Click any row for details, research links, and outreach templates. Statuses, notes, and follow-ups save in this browser and survive data refreshes.</div>
+  </section>
+
+  <section id="view-pipe" style="display:none;"><div class="pipe" id="pipeCols"></div></section>
+
+  <section id="view-tpl" style="display:none;">
+    <div class="panel"><div class="hd"><span class="eyebrow">Mail letter · send at ~45 and ~30 days out</span></div><div class="bd"><pre style="white-space:pre-wrap;font:12.5px/1.6 ui-monospace,monospace;" id="tplLetter"></pre></div></div>
+    <div class="panel"><div class="hd"><span class="eyebrow">SMS · ~21 days out (TCPA: no autodialers, honor opt-outs)</span></div><div class="bd"><pre style="white-space:pre-wrap;font:12.5px/1.6 ui-monospace,monospace;" id="tplSms"></pre></div></div>
+    <div class="panel"><div class="hd"><span class="eyebrow">Email · any time after first letter</span></div><div class="bd"><pre style="white-space:pre-wrap;font:12.5px/1.6 ui-monospace,monospace;" id="tplEmail"></pre></div></div>
+  </section>
+</div>
+
+<div id="ovl" onclick="closeDrawer()"></div>
+<aside id="drawer"></aside>
+
+<script>
+/* ============ passcode gate ============ */
+const GATE_HASH = "f58c236f317c343b61740a47dbfbd9005f0f20d971eae9d8da1863698c8fae71"; // sha256 of passcode
+async function sha256(s) {
+  if (crypto.subtle) {
+    const b = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(s));
+    return [...new Uint8Array(b)].map(x => x.toString(16).padStart(2, "0")).join("");
+  }
+  return null; // insecure context (file://) — fall back to plain compare below
+}
+async function tryGate() {
+  const v = document.getElementById("pw").value.trim();
+  const h = await sha256(v);
+  const ok = h ? h === GATE_HASH : v === "elkaim26"; // file:// preview fallback
+  if (ok) { sessionStorage.setItem("ss_gate", "1"); openApp(); }
+  else document.getElementById("gateErr").textContent = "Wrong passcode.";
+}
+document.getElementById("pw").addEventListener("keydown", e => { if (e.key === "Enter") tryGate(); });
+function openApp() {
+  document.getElementById("gate").style.display = "none";
+  document.getElementById("app").style.display = "block";
+  boot();
+}
+if (sessionStorage.getItem("ss_gate") === "1") openApp();
+
+/* ============ data ============ */
+let DATA = null, LEADS = [], sortKey = "saleDate", sortDir = 1, booted = false;
+const STATUSES = ["new","researching","contacted","responded","negotiating","won","dead"];
+const store = {
+  get(sheriff) { try { return JSON.parse(localStorage.getItem("ss_lead_" + sheriff)) || {}; } catch { return {}; } },
+  set(sheriff, obj) { localStorage.setItem("ss_lead_" + sheriff, JSON.stringify(obj)); }
+};
+
+async function boot() {
+  if (booted) return; booted = true;
+  try {
+    const r = await fetch("leads.json", { cache: "no-store" });
+    DATA = await r.json();
+  } catch (e) {
+    document.getElementById("health").innerHTML = '<span class="dot stale"></span><span>Could not load data/leads.json — if previewing locally, run a local server or deploy to GitHub Pages.</span>';
+    return;
+  }
+  LEADS = DATA.leads.map(a => {
+    const o = { pid: a[0], sheriff: a[1], township: a[2], saleDate: a[3], plaintiff: a[4], defendant: a[5], addr: a[6], judgment: a[7] };
+    const m = o.addr.match(/^(.*?)\s+([A-Za-z .\/'&-]+?)\s+PA\s+(\d{5})$/);
+    o.street = m ? m[1] : o.addr; o.city = m ? m[2] : ""; o.zip = m ? m[3] : "";
+    const s = store.get(o.sheriff);
+    o.status = s.status || "new"; o.notes = s.notes || ""; o.follow = s.follow || "";
+    return o;
+  });
+  const dates = [...new Set(LEADS.map(l => l.saleDate))];
+  const sel = document.getElementById("fDate");
+  dates.forEach(d => { const op = document.createElement("option"); op.textContent = d; sel.appendChild(op); });
+  renderHealth(); renderTemplatesTab(); render();
+}
+
+function daysUntil(mdY) {
+  const [m, d, y] = mdY.split("/").map(Number);
+  return Math.ceil((new Date(y, m - 1, d) - new Date()) / 86400000);
+}
+function daysChip(l) {
+  const d = daysUntil(l.saleDate);
+  if (d < 0) return `<span class="chip days-past">passed</span>`;
+  if (d <= 14) return `<span class="chip days-urgent">${d}d</span>`;
+  if (d <= 30) return `<span class="chip days-soon">${d}d</span>`;
+  return `<span class="chip days-later">${d}d</span>`;
+}
+function esc(s) { return String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+
+function renderHealth() {
+  const up = new Date(DATA.updated);
+  const age = Math.floor((Date.now() - up) / 86400000);
+  const stale = age > 2;
+  document.getElementById("health").innerHTML =
+    `<span class="dot ${stale ? "stale" : "ok"}"></span><span>CivilView · data refreshed ${up.toLocaleDateString("en-US", { month: "short", day: "numeric" })}${stale ? " · refresh due" : ""}</span>`;
+}
+
+function renderKPIs(list) {
+  const active = LEADS.filter(l => daysUntil(l.saleDate) >= 0 && l.status !== "dead" && l.status !== "won");
+  const within14 = active.filter(l => daysUntil(l.saleDate) <= 14).length;
+  const contacted = LEADS.filter(l => ["contacted","responded","negotiating","won"].includes(l.status)).length;
+  const responded = LEADS.filter(l => ["responded","negotiating","won"].includes(l.status)).length;
+  const next = [...new Set(LEADS.map(l => l.saleDate))].filter(d => daysUntil(d) >= 0).sort((a,b) => daysUntil(a) - daysUntil(b))[0];
+  document.getElementById("kpis").innerHTML = `
+    <div class="kpi"><div class="eyebrow">Active leads</div><div class="v num">${active.length}</div><div class="s">of ${LEADS.length} total listings</div></div>
+    <div class="kpi"><div class="eyebrow">Sale ≤ 14 days</div><div class="v num" style="color:${within14 ? "var(--rust)" : "var(--ink)"}">${within14}</div><div class="s">time-critical outreach</div></div>
+    <div class="kpi"><div class="eyebrow">Next sale date</div><div class="v num" style="font-size:19px;padding-top:5px;">${next || "—"}</div><div class="s">${next ? daysUntil(next) + " days away" : ""}</div></div>
+    <div class="kpi"><div class="eyebrow">Contacted</div><div class="v num">${contacted}</div><div class="s">${responded} responded</div></div>`;
+}
+
+function filtered() {
+  const q = document.getElementById("q").value.toLowerCase();
+  const fd = document.getElementById("fDate").value;
+  const fs = document.getElementById("fStatus").value;
+  const hideDead = document.getElementById("fHideDead").checked;
+  return LEADS.filter(l =>
+    (!fd || l.saleDate === fd) &&
+    (!fs || l.status === fs) &&
+    (!hideDead || l.status !== "dead") &&
+    (!q || (l.addr + " " + l.defendant + " " + l.plaintiff + " " + l.township + " " + l.sheriff).toLowerCase().includes(q))
+  );
+}
+function setSort(k) { if (sortKey === k) sortDir *= -1; else { sortKey = k; sortDir = 1; } render(); }
+function setTab(t) {
+  ["board","pipe","tpl"].forEach(x => {
+    document.getElementById("view-" + x).style.display = x === t ? "" : "none";
+    document.getElementById("tab-" + x).classList.toggle("on", x === t);
+  });
+  render();
+}
+
+function render() {
+  renderKPIs();
+  const list = filtered().sort((a, b) => {
+    if (sortKey === "saleDate") return (daysUntil(a.saleDate) - daysUntil(b.saleDate)) * sortDir;
+    return String(a[sortKey]).localeCompare(String(b[sortKey])) * sortDir;
+  });
+  document.getElementById("count").textContent = list.length + " shown";
+  document.getElementById("rows").innerHTML = list.map(l => `
+    <tr onclick="openDrawer('${l.sheriff}')">
+      <td class="num" style="white-space:nowrap;">${l.saleDate}<br>${daysChip(l)}</td>
+      <td><div class="addr">${esc(l.street)}</div><div class="muted">${esc(l.city)} PA ${l.zip}</div></td>
+      <td>${esc(l.township.replace(/ (Township|Borough)$/, ""))}</td>
+      <td>${esc(l.defendant)}</td>
+      <td class="muted">${esc(l.plaintiff)}</td>
+      <td class="muted num">${l.sheriff}</td>
+      <td><span class="chip st-${l.status}">${l.status}</span></td>
+    </tr>`).join("");
+
+  // pipeline
+  const cols = STATUSES.map(st => {
+    const items = LEADS.filter(l => l.status === st && daysUntil(l.saleDate) >= -7)
+      .sort((a, b) => daysUntil(a.saleDate) - daysUntil(b.saleDate));
+    return `<div class="col"><h3>${st.toUpperCase()} <span class="num">${items.length}</span></h3>` + items.map(l => {
+      let rem = "";
+      if (l.follow) {
+        const d = Math.ceil((new Date(l.follow) - new Date()) / 86400000);
+        const cls = d < 0 ? "days-urgent" : d === 0 ? "days-soon" : "days-later";
+        rem = `<span class="rem ${cls}">${d < 0 ? Math.abs(d) + "d overdue" : d === 0 ? "due today" : "follow-up in " + d + "d"}</span>`;
+      }
+      return `<div class="card" onclick="openDrawer('${l.sheriff}')"><div class="a">${esc(l.street)}</div><div class="m">${esc(l.city)} · sale ${l.saleDate} (${daysUntil(l.saleDate)}d)</div>${rem}</div>`;
+    }).join("") + `</div>`;
+  }).join("");
+  document.getElementById("pipeCols").innerHTML = cols;
+}
+
+/* ============ drawer ============ */
+function openDrawer(sheriff) {
+  const l = LEADS.find(x => x.sheriff === sheriff); if (!l) return;
+  const enc = encodeURIComponent;
+  const zq = enc(l.street + " " + l.city + " PA " + l.zip);
+  const nameGuess = l.defendant.split(/[&,]| aka | a\/k\/a /i)[0].trim();
+  const d = document.getElementById("drawer");
+  d.innerHTML = `
+    <button class="close" onclick="closeDrawer()">×</button>
+    <div class="eyebrow">${esc(l.township)} · Sheriff # ${l.sheriff}</div>
+    <h2>${esc(l.street)}</h2>
+    <div class="muted">${esc(l.city)}, PA ${l.zip} · sale ${l.saleDate} ${daysChip(l)}</div>
+
+    <div class="panel"><div class="hd"><span class="eyebrow">Sale facts · CivilView</span></div><div class="bd">
+      <div class="kv">
+        <span class="k">Defendant</span><span>${esc(l.defendant)}</span>
+        <span class="k">Plaintiff</span><span>${esc(l.plaintiff)}</span>
+        <span class="k">Judgment</span><span>${l.judgment ? "$" + Number(l.judgment).toLocaleString() : "— (populates on next scraper run)"}</span>
+        <span class="k">Sale date</span><span>${l.saleDate}</span>
+      </div>
+      <div class="links" style="margin-top:10px;">
+        <a target="_blank" rel="noopener" href="https://salesweb.civilview.com/Sales/SaleDetails?PropertyId=${l.pid}">CivilView detail ↗</a>
+      </div>
+    </div></div>
+
+    <div class="panel"><div class="hd"><span class="eyebrow">Research links</span></div><div class="bd links">
+      <a target="_blank" rel="noopener" href="https://www.zillow.com/homes/${zq}_rb/">Zillow ↗</a>
+      <a target="_blank" rel="noopener" href="https://www.truepeoplesearch.com/results?name=${enc(nameGuess)}&citystatezip=${enc(l.city + ", PA " + l.zip)}">TruePeopleSearch ↗</a>
+      <a target="_blank" rel="noopener" href="https://www.fastpeoplesearch.com/name/${enc(nameGuess.replace(/\s+/g, "-"))}_${enc(l.city.replace(/\s+/g, "-"))}-pa">FastPeopleSearch ↗</a>
+      <a target="_blank" rel="noopener" href="https://www.google.com/search?q=${enc('"' + nameGuess + '" ' + l.city + " PA")}">Google ↗</a>
+      <a target="_blank" rel="noopener" href="https://propertyrecords.montgomerycountypa.gov/">County records ↗</a>
+    </div></div>
+
+    <div class="panel"><div class="hd"><span class="eyebrow">Outreach tracking</span></div><div class="bd">
+      <label class="muted">Status</label>
+      <select id="dStatus">${STATUSES.map(s => `<option ${s === l.status ? "selected" : ""}>${s}</option>`).join("")}</select>
+      <label class="muted" style="display:block;margin-top:10px;">Follow-up date</label>
+      <input type="date" id="dFollow" value="${l.follow}">
+      <label class="muted" style="display:block;margin-top:10px;">Notes</label>
+      <textarea id="dNotes" placeholder="Voicemail left, mailed letter, spoke with…">${esc(l.notes)}</textarea>
+      <button class="btn primary" style="margin-top:10px;" onclick="saveLead('${l.sheriff}')">Save</button>
+      <span class="muted" id="savedMsg" style="margin-left:8px;"></span>
+    </div></div>
+
+    <div class="panel"><div class="hd"><span class="eyebrow">Outreach templates (pre-filled)</span></div><div class="bd">
+      <div class="tpl-btns">
+        <button class="btn" onclick="showTpl('${l.sheriff}','letter')">Letter</button>
+        <button class="btn" onclick="showTpl('${l.sheriff}','sms')">SMS</button>
+        <button class="btn" onclick="showTpl('${l.sheriff}','email')">Email</button>
+        <button class="btn" onclick="copyTpl()">Copy</button>
+      </div>
+      <div class="tplout" id="tplout"></div>
+    </div></div>`;
+  document.getElementById("ovl").classList.add("open");
+  d.classList.add("open");
+}
+function closeDrawer() {
+  document.getElementById("drawer").classList.remove("open");
+  document.getElementById("ovl").classList.remove("open");
+}
+function saveLead(sheriff) {
+  const l = LEADS.find(x => x.sheriff === sheriff);
+  l.status = document.getElementById("dStatus").value;
+  l.follow = document.getElementById("dFollow").value;
+  l.notes = document.getElementById("dNotes").value;
+  store.set(sheriff, { status: l.status, follow: l.follow, notes: l.notes });
+  document.getElementById("savedMsg").textContent = "Saved ✓";
+  render();
+}
+
+/* ============ templates ============ */
+function fill(tpl, l) {
+  const first = l ? l.defendant.split(/[&,]| aka | a\/k\/a /i)[0].trim().split(" ").pop() : "[FirstName]";
+  return tpl
+    .replaceAll("{name}", l ? l.defendant.split(/[&,]/)[0].trim() : "[Owner Name]")
+    .replaceAll("{first}", first)
+    .replaceAll("{street}", l ? l.street : "[Street Address]")
+    .replaceAll("{city}", l ? l.city : "[City]")
+    .replaceAll("{saleDate}", l ? l.saleDate : "[Sale Date]");
+}
+const TPL = {
+  letter: `Dear {name},
+
+My name is Elan Elkaim, and I'm a local real estate professional here in Montgomery County. I'm writing because public records show that {street} is scheduled for sheriff sale on {saleDate}.
+
+I know this is a difficult situation, and I want you to know you still have options. In many cases, homeowners in your position can sell their property before the sale date, pay off what's owed, and walk away with money in their pocket — instead of losing everything at auction.
+
+I work with families in this exact situation. If you'd like to explore what your home could sell for and whether there's equity you can protect, I'd be glad to talk — no pressure, no obligation.
+
+You can reach me directly at [PHONE] or [EMAIL].
+
+Respectfully,
+Elan Elkaim
+Elkaim Property Group`,
+  sms: `Hi {first}, this is Elan, a local realtor in Montgomery County. I saw {street} is scheduled for sheriff sale on {saleDate}. You may still be able to sell before then and keep your equity. Happy to explain your options — no pressure. OK to reply STOP to opt out.`,
+  email: `Subject: Options for {street} before {saleDate}
+
+Hi {name},
+
+I'm a local real estate professional in Montgomery County. County records show {street} in {city} is scheduled for sheriff sale on {saleDate}.
+
+Until the sale happens, you typically still have the right to sell your home yourself. If there's equity in the property, selling before the auction can mean walking away with cash instead of losing the home and the equity at sheriff sale.
+
+I'd be glad to give you a free, honest assessment of what your home could sell for and what your options look like. No obligation.
+
+Best,
+Elan Elkaim
+Elkaim Property Group · [PHONE]`
+};
+function showTpl(sheriff, kind) {
+  const l = LEADS.find(x => x.sheriff === sheriff);
+  const el = document.getElementById("tplout");
+  el.style.display = "block";
+  el.textContent = fill(TPL[kind], l);
+}
+function copyTpl() {
+  const el = document.getElementById("tplout");
+  if (el.textContent) navigator.clipboard.writeText(el.textContent);
+}
+function renderTemplatesTab() {
+  document.getElementById("tplLetter").textContent = fill(TPL.letter, null);
+  document.getElementById("tplSms").textContent = fill(TPL.sms, null);
+  document.getElementById("tplEmail").textContent = fill(TPL.email, null);
+}
+
+/* ============ export ============ */
+function exportCSV() {
+  const head = ["sheriff","saleDate","street","city","zip","township","defendant","plaintiff","judgment","status","followUp","notes","civilviewUrl"];
+  const rows = LEADS.map(l => [l.sheriff, l.saleDate, l.street, l.city, l.zip, l.township, l.defendant, l.plaintiff, l.judgment ?? "", l.status, l.follow, l.notes, "https://salesweb.civilview.com/Sales/SaleDetails?PropertyId=" + l.pid]);
+  const csv = [head, ...rows].map(r => r.map(c => `"${String(c).replaceAll('"', '""')}"`).join(",")).join("\n");
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([csv], { type: "text/csv" }));
+  a.download = "sheriff-sale-leads.csv";
+  a.click();
+}
+</script>
+</body>
+</html>
