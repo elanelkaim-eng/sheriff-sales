@@ -1,9 +1,8 @@
 {
-"updated": "2026-08-26T10:57:57",
+"updated": "2026-08-27T20:35:25",
 "source": "salesweb.civilview.com countyId=23",
 "county": "Montgomery",
 "saleDates": [
-"8/26/2026",
 "9/30/2026",
 "10/28/2026",
 "12/2/2026"
@@ -20,397 +19,7 @@
 ],
 "leads": [
 [
-"2115552898",
-"12006636",
-"Lower Merion Township",
-"8/26/2026",
-"1900 Capital Trust I...",
-"Siwoniku Abraham A. ...",
-"710 Oxford Road Bala Cynwyd PA 19004",
-2498.19
-],
-[
-"2115552932",
-"20002444",
-"Upper Hanover Township",
-"8/26/2026",
-"Upper Perkiomen Scho...",
-"Thomas Scott...",
-"3771 Layfield Road Upper Hanover PA 18073",
-3059.04
-],
-[
-"2115552939",
-"21007715",
-"Lower Merion Township",
-"8/26/2026",
-"Citizens Bank, N.A. ...",
-"Finch Dena R. a/k/a ...",
-"205 Stoneway Lane Merion Station PA 19066",
-2719.56
-],
-[
-"2115552947",
-"22002723",
-"Upper Providence Township",
-"8/26/2026",
-"Tompkins Community B...",
-"Barbine Thomas M & B...",
-"29 Eagle Road Phoenixville PA 19460",
-2515.49
-],
-[
-"2115552957",
-"22009546",
-"Pottstown Borough",
-"8/26/2026",
-"U.S. Bank Trust N.A....",
-"Krause Kevin D & Kra...",
-"17 East Seventh Street Pottstown PA 19464",
-2309.47
-],
-[
-"2115552958",
-"22009758",
-"Cheltenham Township",
-"8/26/2026",
-"Township of Cheltenh...",
-"Bryson Alice & Whitm...",
-"311 Waring Road Elkins Park PA 19027",
-3989.51
-],
-[
-"2115552975",
-"23005003",
-"Lower Pottsgrove Township",
-"8/26/2026",
-"Lakeview Loan Servic...",
-"William S Cook...",
-"952 Maple Glen Circle Pottstown PA 19464",
-2381.16
-],
-[
-"2115552998",
-"24000023",
-"Pottstown Borough",
-"8/26/2026",
-"Pottstown School Dis...",
-"Baldwin Brendan & Ba...",
-"27 East Second Street Pottstown PA 19464",
-2294.35
-],
-[
-"2115553003",
-"24001698",
-"Upper Gwynedd Township",
-"8/26/2026",
-"U.S. Bank Trust N.A....",
-"Walters Sylvannya C....",
-"1174 Kipling Court Lansdale PA 19446",
-2213.25
-],
-[
-"2115553007",
-"24002553",
-"Cheltenham Township",
-"8/26/2026",
-"US Bank Trust NA, ni...",
-"Nguyen Giang Huong...",
-"919 Laburnum Lane Wyncote PA 19095",
-339661.66
-],
-[
-"2115553010",
-"24003165",
-"Pottstown Borough",
-"8/26/2026",
-"Pottstown School Dis...",
-"Eschbach Robert W, J...",
-"14 West Fourth Street Pottstown PA 19464",
-2122.48
-],
-[
-"2115553029",
-"24006699",
-"Cheltenham Township",
-"8/26/2026",
-"Cheltenham School Di...",
-"Kumar Christine A. C...",
-"7513 Woodlawn Avenue Elkins Park PA 19027",
-2460.8
-],
-[
-"2115553034",
-"24007150",
-"New Hanover Township",
-"8/26/2026",
-"Boyertown Area Schoo...",
-"Adams Keith T....",
-"2199 Colflesh Road Perkiomenville PA 18074",
-2112.92
-],
-[
-"2115553045",
-"24008935",
-"Conshohocken Borough",
-"8/26/2026",
-"Colonial Savings, F....",
-"Distel Patricia...",
-"337 East 9th Avenue aka 337 E. Ninth Avenue Conshohocken PA 19428",
-194426.51
-],
-[
-"2115553052",
-"24009509",
-"Pottstown Borough",
-"8/26/2026",
-"Pottstown School Dis...",
-"Ward Dawn...",
-"1236 Queen Street Pottstown PA 19464",
-1940.46
-],
-[
-"2115553062",
-"24011391",
-"Upper Providence Township",
-"8/26/2026",
-"North American Savin...",
-"Stewart Jaime Lee...",
-"908 Mennonite Road Royersford PA 19468",
-2936.92
-],
-[
-"2115553073",
-"24013696",
-"Lower Providence Township",
-"8/26/2026",
-"MCLP Asset Company I...",
-"Barton Aja & Barton ...",
-"2617 Condor Circle Audubon PA 19403",
-2348.31
-],
-[
-"2115553082",
-"25000438",
-"Upper Merion Township",
-"8/26/2026",
-"Freedom Mortgage Cor...",
-"Holubowsky Victor...",
-"582 Charles Drive King of Prussia PA 19406",
-2280.81
-],
-[
-"2115553088",
-"25001140",
-"Norristown Borough",
-"8/26/2026",
-"Camaplan Administrat...",
-"Welliott Investment ...",
-"1043 Green Street Norristown PA 19401",
-2273.51
-],
-[
-"2115553090",
-"25001403",
-"Upper Dublin Township",
-"8/26/2026",
-"GITSIT SOLUTIONS, LL...",
-"Bathini Construction...",
-"1710 Twining Road Willow Grove PA 19090",
-2293.17
-],
-[
-"2115553093",
-"25001813",
-"Lower Pottsgrove Township",
-"8/26/2026",
-"Wells Fargo Bank, N....",
-"Galloway Angela & Ca...",
-"2 Lee Drive Pottstown PA 19464",
-2415.32
-],
-[
-"2115553100",
-"25002579",
-"Abington Township",
-"8/26/2026",
-"Wilmington Savings F...",
-"Tro1 LLC...",
-"623 Wanamaker Road Jenkintown PA 19046",
-2801.48
-],
-[
-"2115553109",
-"25003326",
-"Upper Providence Township",
-"8/26/2026",
-"Township of Upper Pr...",
-"Turosinski Mark R. &...",
-"3 Paddington Road Collegeville PA 19426",
-3051.03
-],
-[
-"2115553112",
-"25003642",
-"Upper Providence Township",
-"8/26/2026",
-"Township of Upper Pr...",
-"Medaglia-Chilcote Je...",
-"152 Providence Forge Royersford PA 19468",
-3288.8
-],
-[
-"2115553116",
-"25004207",
-"Telford Borough",
-"8/26/2026",
-"QNB Bank...",
-"Shearer Lori Beth & ...",
-"11 Kynkyn Circle Telford PA 18969",
-2654.33
-],
-[
-"2115553128",
-"25005570",
-"Cheltenham Township",
-"8/26/2026",
-"Freedom Mortgage Cor...",
-"Jackson Leone & Shab...",
-"7953 Milltown Circle Cheltenham PA 19012",
-3456.73
-],
-[
-"2115553142",
-"25006506",
-"East Greenville Borough",
-"8/26/2026",
-"Carrington Mortgage ...",
-"Heberlig David M. a/...",
-"310 State Street East Greenville PA 18041",
-1934.12
-],
-[
-"2115553147",
-"25007091",
-"Lower Merion Township",
-"8/26/2026",
-"Wilmington Savings F...",
-"Bristow Bonnie M aka...",
-"129 Simpson Road Ardmore PA 19003",
-2415.21
-],
-[
-"2115553164",
-"25008222",
-"Franconia Township",
-"8/26/2026",
-"Santander Bank, Nati...",
-"Pohl Jennifer & Pohl...",
-"31 Township Line Road Souderton PA 18964",
-2721.92
-],
-[
-"2115553177",
-"25009035",
-"Whitpain Township",
-"8/26/2026",
-"Wells Fargo Bank, NA...",
-"Smalls, Jr. Ezekiel ...",
-"1798 Sherwood Drive Blue Bell PA 19422",
-2607.73
-],
-[
-"2115553185",
-"25009682",
-"Abington Township",
-"8/26/2026",
-"Carrington Mortgage ...",
-"Cooper Debra, Miccio...",
-"1355 Arnold Avenue Roslyn PA 19001",
-2191.91
-],
-[
-"2115553205",
-"25011136",
-"Upper Dublin Township",
-"8/26/2026",
-"Trumark Financial Cr...",
-"Rishita Shah & Trive...",
-"105 Victoria Court Amber aka Maple Glen PA 19002",
-1955.35
-],
-[
-"2115553209",
-"25011333",
-"Upper Moreland Township",
-"8/26/2026",
-"Deutsche Bank Nation...",
-"Soundar Moune...",
-"101 Newington Drive Hatboro PA 19040",
-3413.21
-],
-[
-"2115553213",
-"25011485",
-"Hatboro Borough",
-"8/26/2026",
-"U.S. Bank Trust N.A....",
-"Rafa Jeffrey A....",
-"17 Edward Road Hatboro PA 19040",
-2079.54
-],
-[
-"2115553241",
-"25013193",
-"Abington Township",
-"8/26/2026",
-"Pennymac Loan Servic...",
-"Joyner Vincent & McK...",
-"2923 Turner Avenue Abington PA 19001",
-2227.17
-],
-[
-"2115553251",
-"25014233",
-"Norristown Borough",
-"8/26/2026",
-"Lakeview Loan Servic...",
-"Delgado Jennifer M. ...",
-"1202 Dekalb Street Bldg 3, #108 Norristown PA 19401",
-2270.14
-],
-[
-"2115553267",
-"26000133",
-"Lower Providence Township",
-"8/26/2026",
-"Univest Bank And Tru...",
-"Hibbets Arthur...",
-"429 South Park Avenue Audubon PA 19403",
-112541.96
-],
-[
-"2115553278",
-"26000952",
-"Lower Merion Township",
-"8/26/2026",
-"U.S. Bank Trust Comp...",
-"Zenobi Janine A....",
-"502 Rockavon Road Narberth PA 19072",
-3044.91
-],
-[
-"2115552901",
-"14012969",
-"Horsham Township",
-"9/30/2026",
-"U.S. Bank National A...",
-"Josephson Daniel H. ...",
-"71 Black Watch Court Horsham PA 19044",
-1714.68
-],
-[
-"2115552902",
+"2117549679",
 "15001870",
 "Abington Township",
 "9/30/2026",
@@ -420,7 +29,7 @@
 2045.65
 ],
 [
-"2115552903",
+"2117549680",
 "15007995",
 "Abington Township",
 "9/30/2026",
@@ -430,7 +39,7 @@
 2468.44
 ],
 [
-"2115552905",
+"2117549682",
 "16010720",
 "Abington Township",
 "9/30/2026",
@@ -440,7 +49,7 @@
 2202.04
 ],
 [
-"2115552914",
+"2117549691",
 "18002618",
 "Lower Merion Township",
 "9/30/2026",
@@ -450,7 +59,7 @@
 1618.68
 ],
 [
-"2115552915",
+"2117549692",
 "18003119",
 "Norristown Borough",
 "9/30/2026",
@@ -460,7 +69,7 @@
 2191.35
 ],
 [
-"2115552917",
+"2117549694",
 "18012479",
 "West Conshohocken Borough",
 "9/30/2026",
@@ -470,7 +79,7 @@
 3095.23
 ],
 [
-"2115552918",
+"2117549695",
 "18013153",
 "Upper Merion Township",
 "9/30/2026",
@@ -480,7 +89,7 @@
 2932.94
 ],
 [
-"2115552920",
+"2117549697",
 "19002104",
 "Upper Dublin Township",
 "9/30/2026",
@@ -490,7 +99,7 @@
 2146.59
 ],
 [
-"2115552924",
+"2117549701",
 "19010765",
 "Lower Pottsgrove Township",
 "9/30/2026",
@@ -500,7 +109,7 @@
 2123.81
 ],
 [
-"2115552930",
+"2117549707",
 "20002193",
 "Montgomery Township",
 "9/30/2026",
@@ -510,7 +119,7 @@
 2975.0
 ],
 [
-"2115552931",
+"2117549708",
 "20002263",
 "Pottstown Borough",
 "9/30/2026",
@@ -520,7 +129,7 @@
 1861.62
 ],
 [
-"2115552943",
+"2117549720",
 "21009406",
 "Cheltenham Township",
 "9/30/2026",
@@ -530,7 +139,7 @@
 3149.99
 ],
 [
-"2115552949",
+"2117549726",
 "22005323",
 "Abington Township",
 "9/30/2026",
@@ -540,7 +149,7 @@
 2114.78
 ],
 [
-"2115552952",
+"2117549729",
 "22006425",
 "Upper Salford Township",
 "9/30/2026",
@@ -550,7 +159,7 @@
 36589.42
 ],
 [
-"2115552953",
+"2117549730",
 "22006857",
 "Pottstown Borough",
 "9/30/2026",
@@ -560,7 +169,7 @@
 1926.65
 ],
 [
-"2115552959",
+"2117549736",
 "23000144",
 "Upper Moreland Township",
 "9/30/2026",
@@ -570,7 +179,7 @@
 222571.08
 ],
 [
-"2115552962",
+"2117549739",
 "23001116",
 "West Norriton Township",
 "9/30/2026",
@@ -580,7 +189,7 @@
 286541.59
 ],
 [
-"2115552963",
+"2117549740",
 "23001380",
 "Springfield Township",
 "9/30/2026",
@@ -590,7 +199,7 @@
 2474.1
 ],
 [
-"2115552965",
+"2117549742",
 "23001887",
 "Hatboro Borough",
 "9/30/2026",
@@ -600,7 +209,7 @@
 2769.23
 ],
 [
-"2115552977",
+"2117549754",
 "23006361",
 "Norristown Borough",
 "9/30/2026",
@@ -610,7 +219,7 @@
 3118.29
 ],
 [
-"2115552999",
+"2117549776",
 "24000118",
 "Abington Township",
 "9/30/2026",
@@ -620,7 +229,7 @@
 1961.43
 ],
 [
-"2115553015",
+"2117549792",
 "24004035",
 "Cheltenham Township",
 "9/30/2026",
@@ -630,7 +239,7 @@
 3103.8
 ],
 [
-"2115553016",
+"2117549793",
 "24004161",
 "New Hanover Township",
 "9/30/2026",
@@ -640,7 +249,7 @@
 1845.92
 ],
 [
-"2115553018",
+"2117549795",
 "24004356",
 "Bridgeport Borough",
 "9/30/2026",
@@ -650,7 +259,7 @@
 2671.55
 ],
 [
-"2115553022",
+"2117549799",
 "24005190",
 "Souderton Borough",
 "9/30/2026",
@@ -660,7 +269,7 @@
 2539.96
 ],
 [
-"2115553023",
+"2117549800",
 "24005431",
 "Horsham Township",
 "9/30/2026",
@@ -670,7 +279,7 @@
 1771644.08
 ],
 [
-"2115553027",
+"2117549804",
 "24006108",
 "Montgomery Township",
 "9/30/2026",
@@ -680,7 +289,7 @@
 3351.33
 ],
 [
-"2115553032",
+"2117549809",
 "24007101",
 "Upper Providence Township",
 "9/30/2026",
@@ -690,7 +299,7 @@
 3059.88
 ],
 [
-"2115553036",
+"2117549813",
 "24007507",
 "West Norriton Township",
 "9/30/2026",
@@ -700,7 +309,7 @@
 2479.03
 ],
 [
-"2115553041",
+"2117549818",
 "24007849",
 "Norristown Borough",
 "9/30/2026",
@@ -710,7 +319,7 @@
 2577.2
 ],
 [
-"2115553042",
+"2117549819",
 "24008146",
 "Abington Township",
 "9/30/2026",
@@ -720,7 +329,7 @@
 1191126.11
 ],
 [
-"2115553043",
+"2117549820",
 "24008538",
 "Lower Pottsgrove Township",
 "9/30/2026",
@@ -730,1844 +339,1954 @@
 2227.54
 ],
 [
-"2115553047",
+"2117549824",
 "24009247",
 "Bridgeport Borough",
 "9/30/2026",
 "MidFirst Bank...",
 "Maslayak Mary I....",
 "356 Grove Street Bridgeport PA 19405",
-154419.66
+null
 ],
 [
-"2115553048",
+"2117549825",
 "24009333",
 "Abington Township",
 "9/30/2026",
 "Citizens Bank, N.A....",
 "Mattox Martin S & Ma...",
 "2501 Patane Avenue Abington PA 19001",
-2983.6
+null
 ],
 [
-"2115553051",
+"2117549828",
 "24009504",
 "Douglass Township",
 "9/30/2026",
 "Boyertown Area Schoo...",
 "Landis Michael...",
 "337 Bow Lane Gilbertsville PA 19525",
-6422.09
+null
 ],
 [
-"2115553054",
+"2117549831",
 "24009755",
 "Pottstown Borough",
 "9/30/2026",
 "Pottstown School Dis...",
 "Rambo Richard A....",
 "1477 Sunset Drive Pottstown PA 19464",
-5430.24
+null
 ],
 [
-"2115553055",
+"2117549832",
 "24009760",
 "Cheltenham Township",
 "9/30/2026",
 "US Bank Trust N.A., ...",
 "Cumming Freeman Emma...",
 "7745 Mellon Road Wyncote PA 19095",
-784409.74
+null
 ],
 [
-"2115553059",
+"2117549836",
 "24010407",
 "Perkiomen Township",
 "9/30/2026",
 "M&T Bank...",
 "Parker Rhon & Wells ...",
 "180 Salem Road Perkiomenville PA 18074",
-173982.45
+null
 ],
 [
-"2115553064",
+"2117549839",
+"24011391",
+"Upper Providence Township",
+"9/30/2026",
+"North American Savin...",
+"Stewart Jaime Lee...",
+"908 Mennonite Road Royersford PA 19468",
+null
+],
+[
+"2117549841",
 "24011822",
 "Pottstown Borough",
 "9/30/2026",
 "Crosscountry Mortgag...",
 "Lilly Jessica L. & B...",
 "1072 North Warren Street Pottstown PA 19464",
-2333.85
+null
 ],
 [
-"2115553066",
+"2117549843",
 "24012385",
 "Norristown Borough",
 "9/30/2026",
 "Navy Federal Credit ...",
 "Unknown Heirs, Succe...",
 "1818 Pine Street Norristown PA 19401",
-2187.23
+null
 ],
 [
-"2115553072",
+"2117549849",
 "24013196",
 "Norristown Borough",
 "9/30/2026",
 "U.S. Bank Trust Comp...",
 "Lemire Raymond Jr., ...",
 "124 Stanbridge Street Norristown PA 19401",
-141990.48
+null
 ],
 [
-"2115553083",
+"2117549860",
 "25000753",
 "Cheltenham Township",
 "9/30/2026",
 "Cheltenham School Di...",
 "Dunleavey Hope...",
 "413 Valley Road Elkins Park PA 19027",
-7786.17
+null
 ],
 [
-"2115553085",
+"2117549862",
 "25000848",
 "Bridgeport Borough",
 "9/30/2026",
 "U.S. Bank Trust NA a...",
 "Kern Danielle K, Ind...",
 "108 West 5th Street Bridgeport PA 19405",
-2828.07
+null
 ],
 [
-"2115553087",
+"2117549864",
 "25000878",
 "Lower Providence Township",
 "9/30/2026",
 "Federal Home Loan Mo...",
 "Shala Anton & Shala ...",
 "5 Brimfield Road Norristown PA 19403",
-2491.32
+null
 ],
 [
-"2115553094",
+"2117549871",
 "25002044",
 "Norristown Borough",
 "9/30/2026",
 "U.S. Bank Trust NA a...",
 "Carver Patrice A....",
 "539 Chain Street Norristown PA 19401",
-1964.01
+null
 ],
 [
-"2115553095",
+"2117549872",
 "25002076",
 "Abington Township",
 "9/30/2026",
 "Santander Bank N.A....",
 "Milnes Wade A & Miln...",
 "22 Chapel Hill Road Huntingdon Valley PA 19006",
-2380.62
+null
 ],
 [
-"2115553101",
+"2117549877",
+"25002579",
+"Abington Township",
+"9/30/2026",
+"Wilmington Savings F...",
+"Tro1 LLC...",
+"623 Wanamaker Road Jenkintown PA 19046",
+null
+],
+[
+"2117549878",
 "25002889",
 "Upper Moreland Township",
 "9/30/2026",
 "School District of U...",
 "McHugh Jeffrey Marti...",
 "409 Preston Lane Hatboro PA 19040",
-6430.91
+null
 ],
 [
-"2115553107",
+"2117549884",
 "25003241",
 "Upper Salford Township",
 "9/30/2026",
 "Freedom Mortgage Cor...",
 "Konopski Joseph & Ko...",
 "1576 Salford Street Harleysville PA 19438",
-2569.5
+null
 ],
 [
-"2115553111",
+"2117549888",
 "25003603",
 "New Hanover Township",
 "9/30/2026",
 "Boyertown Area Schoo...",
 "Fegley Ryan & Fegley...",
 "2063 Big Road Gilbertsville PA 19525",
-5620.92
+null
 ],
 [
-"2115553114",
+"2117549891",
 "25003938",
 "Abington Township",
 "9/30/2026",
 "Amerihome Mortgage C...",
 "Hughes Amanda aka Hu...",
 "1631 Arnold Avenue Willow Grove PA 19090",
-2142.61
+null
 ],
 [
-"2115553118",
+"2117549895",
 "25004546",
 "Norristown Borough",
 "9/30/2026",
 "Wells Fargo Bank N.A...",
 "Hernandez Felipe...",
 "918 Stanbridge Street Norristown PA 19401",
-97299.01
+null
 ],
 [
-"2115553121",
+"2117549898",
 "25004922",
 "Pottstown Borough",
 "9/30/2026",
 "Pottstown School Dis...",
 "S. Miller and Son Bu...",
 "211 High Street Pottstown PA 19464",
-10811.92
+null
 ],
 [
-"2115553124",
+"2117549901",
 "25005167",
 "Pottstown Borough",
 "9/30/2026",
 "Lakeview Loan Servic...",
 "Nixon Janae...",
 "14 East 5th Street Pottstown PA 19464",
-2090.23
+null
 ],
 [
-"2115553126",
+"2117549903",
 "25005221",
 "Norristown Borough",
 "9/30/2026",
 "The Bank of New York...",
 "Johnson Gloria...",
 "1043 Dekalb Street and 60 East Spruce Street Norristown PA 19401",
-3251.41
+null
 ],
 [
-"2115553135",
+"2117549912",
 "25006042",
 "Royersford Borough",
 "9/30/2026",
 "Freedom Mortgage Com...",
 "Plank Robert & USA...",
 "545 Walnut Street Royersford PA 19468",
-184607.05
+null
 ],
 [
-"2115553137",
+"2117549914",
 "25006180",
 "Cheltenham Township",
 "9/30/2026",
 "MCLP Asset Company I...",
 "Aycox Stefanie...",
 "8220 Aspen Way Elkins Park PA 19027",
-2266.24
+null
 ],
 [
-"2115553146",
+"2117549923",
 "25006880",
 "Norristown Borough",
 "9/30/2026",
 "Citimortgage, Inc....",
 "Mann Richard, Jr. ak...",
 "756 Roosevelt Avenue Norristown PA 19401",
-173519.09
+null
 ],
 [
-"2115553161",
+"2117549938",
 "25007887",
 "Pottstown Borough",
 "9/30/2026",
 "Pennsylvania Housing...",
 "Quinter Krystal...",
 "519 Spruce Street Pottstown PA 19464",
-2384.85
+null
 ],
 [
-"2115553170",
+"2117549947",
 "25008519",
 "Perkiomen Township",
 "9/30/2026",
 "U.S. Bank N.A. as Le...",
 "Panzarella Russell A...",
 "47 Salem Road Schwenksville PA 19473",
-262320.05
+null
 ],
 [
-"2115553172",
+"2117549949",
 "25008603",
 "Abington Township",
 "9/30/2026",
 "LoanDepot Com, LLC...",
 "Williams Darryl V, W...",
 "1423 Fitzwatertown Road Willow Grove PA 19090",
-2817.5
+null
 ],
 [
-"2115553179",
+"2117549956",
 "25009218",
 "Cheltenham Township",
 "9/30/2026",
 "PNC Bank National As...",
 "Thomas Allen C, III...",
 "166 South Keswick Avenue Glenside PA 19038",
-1862.57
+null
 ],
 [
-"2115553182",
+"2117549959",
 "25009557",
 "Cheltenham Township",
 "9/30/2026",
 "MCLP Asset Company I...",
 "Lewis Jasen D & Robi...",
 "612 Arbor Road Cheltenham PA 19012",
-1993.18
+null
 ],
 [
-"2115553189",
+"2117549966",
 "25010011",
 "Abington Township",
 "9/30/2026",
 "U.S. Bank Trust N.A....",
 "Mills Glen C....",
 "322 Tulpehocken Avenue Elkins Park PA 19027",
-273636.95
+null
 ],
 [
-"2115553196",
+"2117549973",
 "25010665",
 "Upper Merion Township",
 "9/30/2026",
 "Freedom Mortgage Cor...",
 "Dagit Charles E, III...",
 "124 Gulph Hill Road Wayne PA 19087",
-425563.58
+null
 ],
 [
-"2115553197",
+"2117549974",
 "25010673",
 "West Norriton Township",
 "9/30/2026",
 "PNC Bank National As...",
 "Jacobs Tommy & Jacob...",
 "221 Colonial Avenue Norristown PA 19403",
-2325.69
+null
 ],
 [
-"2115553198",
+"2117549975",
 "25010694",
 "Cheltenham Township",
 "9/30/2026",
 "Siwell Inc. DBA Capi...",
 "Delamar-Leavel Grael...",
 "7303 Sharpless Road Melrose PA 19027",
-927388.15
+null
 ],
 [
-"2115553202",
+"2117549979",
 "25010876",
 "West Pottsgrove Township",
 "9/30/2026",
 "Wilmington Savings F...",
 "Granger Karen L...",
 "120 Race Street Pottstown PA 19464",
-1860.85
+null
 ],
 [
-"2115553204",
+"2117549981",
 "25011014",
 "Cheltenham Township",
 "9/30/2026",
 "U.S. Bank N.A.,, nii...",
 "Hinds Paden K aka Hi...",
 "8321 Thomson Road Elkins Park PA 19027",
-431313.14
+null
 ],
 [
-"2115553207",
+"2117549984",
 "25011197",
 "Horsham Township",
 "9/30/2026",
 "Citibank, N.A. niiic...",
 "Roody Saint Marc Jea...",
 "390 Cedar Hill Road Ambler PA 19002",
-502610.45
+null
 ],
 [
-"2115553210",
+"2117549987",
 "25011404",
 "Royersford Borough",
 "9/30/2026",
 "Planet Home Lending ...",
 "Nafe Natalie Christi...",
 "515 Church Street Royersford PA 19468",
-472718.43
+null
 ],
 [
-"2115553216",
+"2117549993",
 "25011758",
 "Horsham Township",
 "9/30/2026",
 "Lakeview Loan Servic...",
 "Clark Cherita D & Cl...",
 "635 West County Line Road Hatboro PA 19040",
-309553.26
+null
 ],
 [
-"2115553217",
+"2117549994",
 "25011797",
 "Springfield Township",
 "9/30/2026",
 "U.S. Bank Trust NA, ...",
 "Torpey Brendan Execu...",
 "7803 Beech Lane Wyndmoor PA 19038",
-2734.44
+null
 ],
 [
-"2115553218",
+"2117549995",
 "25011807",
 "Upper Dublin Township",
 "9/30/2026",
 "New American Funding...",
 "Crerand Jeannine & U...",
 "6 Cavendish Drive Ambler PA 19002",
-98826.67
+null
 ],
 [
-"2115553221",
+"2117549998",
 "25011866",
 "Norristown Borough",
 "9/30/2026",
 "The Bank Of New York...",
 "Corner Darrell & Cor...",
 "49 West Basin Street Norristown PA 19401",
-115696.23
+null
 ],
 [
-"2115553227",
+"2117550004",
 "25012276",
 "Upper Merion Township",
 "9/30/2026",
 "PNC Bank N.A....",
 "Kemper Jeffrey S...",
 "119 Arden Road Gulph Mills PA 19428",
-2751.24
+null
 ],
 [
-"2115553228",
+"2117550005",
 "25012312",
 "Douglass Township",
 "9/30/2026",
 "U.S. Bank Trust N.A....",
 "Fosnocht Ernest Dust...",
 "69 Wilson Avenue Gilbertsville PA 19525",
-223839.84
+null
 ],
 [
-"2115553232",
+"2117550009",
 "25012716",
 "Upper Moreland Township",
 "9/30/2026",
 "The Bank of New York...",
 "Malatesta Amber, Bre...",
 "3712 Meyer Lane Hatboro PA 19040",
-0.0
+null
 ],
 [
-"2115553233",
+"2117550010",
 "25012789",
 "Pottstown Borough",
 "9/30/2026",
 "Pennymac Loan Servic...",
 "Butler Ryan...",
 "733 Lincoln Avenue Pottstown PA 19464",
-1948.57
+null
 ],
 [
-"2115553235",
+"2117550012",
 "25012806",
 "Lower Merion Township",
 "9/30/2026",
 "U.S. Bank Trust Comp...",
 "Traynham Kyle & Tray...",
 "6 Hampton Terrace Bala Cynwyd PA 19004",
-2789.92
+null
 ],
 [
-"2115553237",
+"2117550014",
 "25012984",
 "Lower Pottsgrove Township",
 "9/30/2026",
 "Nationstar Mortgage ...",
 "Hatfield Joseph P...",
 "630 Oaktree Court Pottstown PA 19464",
-163604.11
+null
 ],
 [
-"2115553238",
+"2117550015",
 "25013020",
 "Red Hill Borough",
 "9/30/2026",
 "Upper Perkiomen Scho...",
 "Ruth David R....",
 "777 Jefferson Street Red Hill PA 18076",
-2232.35
+null
 ],
 [
-"2115553239",
+"2117550016",
 "25013080",
 "West Norriton Township",
 "9/30/2026",
 "Wells Fargo Bank, N....",
 "O'Brien James Patric...",
 "819 Treetop Lane Norristown PA 19403",
-2346.05
+null
 ],
 [
-"2115553242",
+"2117550019",
 "25013231",
 "Lower Merion Township",
 "9/30/2026",
 "Santander Bank N.A....",
 "Grover Elise & Unkno...",
 "1001 City Avenue Unit 1012 Wynnewood PA 19096",
-2608.27
+null
 ],
 [
-"2115553243",
+"2117550020",
 "25013277",
 "Lower Merion Township",
 "9/30/2026",
 "Servbank, SB...",
 "Estate Of Geraldine ...",
 "2148 North Stone Ridge Lane Villanova PA 19085",
-472718.43
+null
 ],
 [
-"2115553244",
+"2117550021",
 "25013597",
 "Lower Merion Township",
 "9/30/2026",
 "Webster Bank N.A....",
 "Greitzer Joseph M & ...",
 "736 Woodleave Road Bryn Mawr PA 19010",
-228938.84
+null
 ],
 [
-"2115553247",
+"2117550024",
 "25014049",
 "Pottstown Borough",
 "9/30/2026",
 "Carrington Mortgage ...",
 "Mckeon Brittney...",
 "1077 Warren Street aka 1077 N. Warren Street Pottstown PA 19464",
-287735.54
+null
 ],
 [
-"2115553252",
+"2117550029",
 "25014342",
 "Pottstown Borough",
 "9/30/2026",
 "Lakeview Loan Servic...",
 "Bonham Melissa Ann a...",
 "2 East 2nd Street Pottstown PA 19464",
-151497.81
+null
 ],
 [
-"2115553258",
+"2117550035",
 "25014677",
 "New Hanover Township",
 "9/30/2026",
 "CitiGroup Mortgage L...",
 "Watt Douglas W....",
 "1945 Canyon Creek Road Gilbertsville PA 19525",
-223556.41
+null
 ],
 [
-"2115553260",
+"2117550037",
 "25014825",
 "Whitemarsh Township",
 "9/30/2026",
 "Us Bank Trust N.A., ...",
 "Levin Joshua & Levin...",
 "740 Germantown Pike Lafayette Hill PA 19444",
-516043.08
+null
 ],
 [
-"2115553263",
+"2117550040",
 "25015130",
 "Whitemarsh Township",
 "9/30/2026",
 "Wilmington Savings F...",
 "DDH Fund LLC & Mende...",
 "552 South Bethlehem Pike Fort Washington PA 19034",
-2959.11
+null
 ],
 [
-"2115553264",
+"2117550041",
 "26000008",
 "Abington Township",
 "9/30/2026",
 "Freedom Mortgage Cor...",
 "Cahill Michael J & T...",
 "525 Penn Avenue Glenside PA 19038",
-163334.4
+null
 ],
 [
-"2115553272",
+"2117550049",
 "26000592",
 "Cheltenham Township",
 "9/30/2026",
 "1600 Church Road Con...",
 "L&S Realty LLC...",
 "1600 Church Road Unit C104 Wyncote PA 19095",
-2188.49
+null
 ],
 [
-"2115553273",
+"2117550050",
 "26000593",
 "Cheltenham Township",
 "9/30/2026",
 "1600 Church Road Con...",
 "L&S Realty LLC...",
 "1600 Church Road Condo D100 Wyncote PA 19095",
-2080.57
+null
 ],
 [
-"2115553275",
+"2117550052",
 "26000706",
 "Upper Providence Township",
 "9/30/2026",
 "Harleysville Bank...",
 "Hinke Jacqueline Y...",
 "14 Iron Hill Way Collegeville PA 19426",
-150829.48
+null
 ],
 [
-"2115553285",
+"2117550064",
 "26002795",
 "Hatfield Borough",
 "9/30/2026",
 "Wells Fargo Bank N.A...",
 "Cooke Amy aka Cooke ...",
 "118 Vernon Court Lansdale PA 19446",
-128708.66
+null
 ],
 [
-"2115553286",
+"2117550065",
 "26002858",
 "Upper Providence Township",
 "9/30/2026",
 "Union Home Mortgage ...",
 "Kayleigh Emrey & unk...",
 "807 South 4th Avenue Royersford PA 19468",
-68368.5
+null
 ],
 [
-"2115553294",
+"2117550074",
 "26004118",
 "Upper Pottsgrove Township",
 "9/30/2026",
 "Dime Community Bank...",
 "Westhampton Restaura...",
 "817 North State Street Pottstown PA 19464",
-567022.7
+null
 ],
 [
-"2115553297",
+"2117550077",
 "26004974",
 "Souderton Borough",
 "9/30/2026",
 "First Citizens Commu...",
 "Heridia Michael W. a...",
 "220 South Fifth Street Souderton PA 18964",
-1867953.71
+null
 ],
 [
-"2115553298",
+"2117550078",
 "26006830",
 "Norristown Borough",
 "9/30/2026",
 "LHome Mortgage Trust...",
 "Illuminated Enterpri...",
 "1717 Willow Street Norristown PA 19401",
-300517.37
+null
 ],
 [
-"2115552899",
+"2117549676",
 "13013129",
 "Lower Pottsgrove Township",
 "10/28/2026",
 "Mark C. Pollock & Th...",
 "The Sunnybrook Found...",
 "50 Sunnybrook Road Pottstown PA 19464",
-394056.96
+null
 ],
 [
-"2115552909",
+"2117549686",
 "17012242",
 "Cheltenham Township",
 "10/28/2026",
 "Township of Cheltenh...",
 "Rainford Patsy B....",
 "517 Lanfair Road Cheltenham PA 19012",
-2390.9
+null
 ],
 [
-"2115552911",
+"2117549688",
 "18001184",
 "Springfield Township",
 "10/28/2026",
 "US Bank Trust N.A., ...",
 "Johnson Kia J.L....",
 "8610 Patton Road Glenside PA 19038",
-3012.4
+null
 ],
 [
-"2115552913",
+"2117549690",
 "18002450",
 "Cheltenham Township",
 "10/28/2026",
 "Mortgage Assets Mana...",
 "Nichols Barbara Loui...",
 "1937 Fawn Drive Laverock PA 19038",
-2541.13
+null
 ],
 [
-"2115552921",
+"2117549698",
 "19003514",
 "Pottstown Borough",
 "10/28/2026",
 "Pottstown School Dis...",
 "Vinson Lisa...",
 "550 Walnut Street Pottstown PA 19464",
-1960.45
+null
 ],
 [
-"2115552926",
+"2117549703",
 "19012132",
 "Telford Borough",
 "10/28/2026",
 "PHH Mortgage Corpora...",
 "Schatz Carolyn J....",
 "161 West Reliance Road Telford PA 18969",
-2293.6
+null
 ],
 [
-"2115552927",
+"2117549704",
 "19013100",
 "Abington Township",
 "10/28/2026",
 "Reverse Mortgage Sol...",
 "Kowalczyk Margaret M...",
 "1370 Lindbergh Avenue Roslyn PA 19001",
-234219.13
+null
 ],
 [
-"2115552933",
+"2117549710",
 "20009437",
 "Pottstown Borough",
 "10/28/2026",
 "Pottstown School Dis...",
 "132 E. Third Street,...",
 "132 East Third Street Pottstown PA 19464",
-40810.49
+null
 ],
 [
-"2115552934",
+"2117549711",
 "21000916",
 "Trappe Borough",
 "10/28/2026",
 "Perkiomen Valley Sch...",
 "Carden Donald Jr. an...",
 "647 Muhlenberg Drive Condo #408 Trappe PA 19426",
-2705.8
+null
 ],
 [
-"2115552941",
+"2117549718",
 "21008720",
 "Bridgeport Borough",
 "10/28/2026",
 "Borough of Bridgepor...",
 "O'Toole Kevin R....",
 "10 Fraley Street Bridgeport PA 19405",
-2041.77
+null
 ],
 [
-"2115552942",
+"2117549719",
 "21009115",
 "Pottstown Borough",
 "10/28/2026",
 "U.S. Bank N.A. niiic...",
 "Dicampello Kristina ...",
 "837 North Adams Street Pottstown PA 19464",
-2272.48
+null
 ],
 [
-"2115552944",
+"2117549721",
 "21009429",
 "Horsham Township",
 "10/28/2026",
 "U.S. Bank N.A., niii...",
 "Cottom David Jr & Co...",
 "1314 Squire Drive Ambler PA 19002",
-2659.89
+null
 ],
 [
-"2115552945",
+"2117549722",
 "21009744",
 "Pottstown Borough",
 "10/28/2026",
 "Pottstown School Dis...",
 "Keyser Zakqary A....",
 "600 North Evans Street Pottstown PA 19464",
-1709.27
+null
 ],
 [
-"2115552950",
+"2117549727",
 "22005479",
 "Horsham Township",
 "10/28/2026",
 "TH MSR Holdings LLC ...",
 "Coniglio Joanne & Co...",
 "936 Tennis Avenue Ambler PA 19002",
-2918.45
+null
 ],
 [
-"2115552956",
+"2117549733",
 "22008942",
 "Schwenksville Borough",
 "10/28/2026",
 "Perkiomen Valley Sch...",
 "Ortino John E. & Ort...",
 "800 Main Street Schwenksville PA 19473",
-4676.36
+null
 ],
 [
-"2115552960",
+"2117549737",
 "23001076",
 "Norristown Borough",
 "10/28/2026",
 "U.S. Bank Trust Comp...",
 "Badoo Victor & Badoo...",
 "305 Dartmouth Drive Norristown PA 19401",
-176122.85
+null
 ],
 [
-"2115552967",
+"2117549744",
 "23002744",
 "Cheltenham Township",
 "10/28/2026",
 "U.S. Bank N.A....",
 "Rose Todd...",
 "7454 Old York Road Elkins Park aka Melrose Park PA",
-446293.32
+null
 ],
 [
-"2115552969",
+"2117549746",
 "23003902",
 "",
 "10/28/2026",
 "U.S. Bank Trust N.A....",
 "Jack Henry Moyer, Li...",
 "316 Overlook Lane Gulph Mills a/k/a Conshohocken PA 19428",
-440082.78
+null
 ],
 [
-"2115552973",
+"2117549750",
 "23004868",
 "Cheltenham Township",
 "10/28/2026",
 "U.S. Bank Trust N.A....",
 "Conmy Emily M. & Con...",
 "205 Buttonwood Way Glenside PA 19038",
-2561.48
+null
 ],
 [
-"2115552974",
+"2117549751",
 "23004970",
 "Abington Township",
 "10/28/2026",
 "U.S. Bank Trust N.A....",
 "Dean Claire M...",
 "1430 Meadowbrook Road aka 1430 Meadowbrook Road Lot 2 Meadowbrook PA 19046",
-484116.68
+null
 ],
 [
-"2115552980",
+"2117549757",
 "23007233",
 "Abington Township",
 "10/28/2026",
 "Township of Abington...",
 "Resurreccion Stacey ...",
 "2148 Curtis Avenue Abington PA 19001",
-2577.36
+null
 ],
 [
-"2115552985",
+"2117549762",
 "23007928",
 "Abington Township",
 "10/28/2026",
 "Specialized Loan Ser...",
 "King Michael Troy, A...",
 "1728 Prospect Avenue Willow Grove PA 19090",
-2512.73
+null
 ],
 [
-"2115552986",
+"2117549763",
 "23008493",
 "Whitpain Township",
 "10/28/2026",
 "Credit Suisse First ...",
 "Mulbah Johnson S...",
 "215 Oak Street Ambler PA 19002",
-2421.45
+null
 ],
 [
-"2115552993",
+"2117549770",
 "23010259",
 "Upper Hanover Township",
 "10/28/2026",
 "Upper Perkiomen Scho...",
 "Butterworth David G....",
 "1050 Peevy Road East Greenville PA 18041",
-11446.99
+null
 ],
 [
-"2115552994",
+"2117549771",
 "23010380",
 "Lower Frederick Township",
 "10/28/2026",
 "Perkiomen Valley Sch...",
 "Barndt Tami L....",
 "9 Village Drive Schwenksville PA 19473",
-1694.3
+null
 ],
 [
-"2115552996",
+"2117549773",
 "23010780",
 "Whitemarsh Township",
 "10/28/2026",
 "Whitemarsh Township...",
 "Kochanowicz Emily R....",
 "416 Flourtown Road Lafayette Hill PA 19444",
-1545.34
+null
 ],
 [
-"2115553000",
+"2117549777",
 "24000298",
 "Whitemarsh Township",
 "10/28/2026",
 "Whitemarsh Township...",
 "Lojeski Dennis...",
 "5174 Butler Pike Plymouth Meeting PA 19462",
-1613.34
+null
 ],
 [
-"2115553002",
+"2117549779",
 "24001013",
 "Cheltenham Township",
 "10/28/2026",
 "Cheltenham School Di...",
 "Young Kathleen A....",
 "519 Arbor Road Cheltenham PA 19012",
-10634.61
+null
 ],
 [
-"2115553004",
+"2117549781",
 "24002193",
 "Upper Moreland Township",
 "10/28/2026",
 "School District of U...",
 "Mueller Kent L, DDS...",
 "1115 Easton Road Willow Grove PA 19090",
-15170.59
+null
 ],
 [
-"2115553012",
+"2117549787",
+"24003165",
+"Pottstown Borough",
+"10/28/2026",
+"Pottstown School Dis...",
+"Eschbach Robert W, J...",
+"14 West Fourth Street Pottstown PA 19464",
+null
+],
+[
+"2117549789",
 "24003868",
 "Perkiomen Township",
 "10/28/2026",
 "Federal Home Loan Mo...",
 "Stasyk S Marie C & S...",
 "1130 Cornwallis Way Collegeville PA 19426",
-237835.99
+null
 ],
 [
-"2115553014",
+"2117549791",
 "24004013",
 "Upper Pottsgrove Township",
 "10/28/2026",
 "Pottsgrove School Di...",
 "Fields Charles A, II...",
 "2120 Prout Farm Road Pottstown PA 19464",
-6180.4
+null
 ],
 [
-"2115553017",
+"2117549794",
 "24004323",
 "Upper Moreland Township",
 "10/28/2026",
 "Specialized Loan Ser...",
 "Maglio Michael...",
 "2820 Lundy Lane Huntingdon Valley PA 19006",
-2423.74
+null
 ],
 [
-"2115553019",
+"2117549796",
 "24004408",
 "Hatfield Township",
 "10/28/2026",
 "U.S. Bank Trust N.A....",
 "Dastider Luna & Dast...",
 "1156 Stoneham Circle Hatfield PA 19440",
-2543.56
+null
 ],
 [
-"2115553025",
+"2117549802",
 "24005629",
 "Horsham Township",
 "10/28/2026",
 "Citizens Bank, N.A....",
 "Burnett William L. &...",
 "12 Sugar Maple Lane Horsham PA 19044",
-4417.31
+null
 ],
 [
-"2115553030",
+"2117549807",
 "24006781",
 "Cheltenham Township",
 "10/28/2026",
 "Nationstar Mortgage ...",
 "Guerrier Claudia & L...",
 "156 East Church Road Elkins Park PA 19027",
-2586.57
+null
 ],
 [
-"2115553033",
+"2117549810",
 "24007148",
 "Douglass Township",
 "10/28/2026",
 "Boyertown Area Schoo...",
 "Dominick Peter and D...",
 "460 Village Green Drive Gilbertsville PA 19525",
-5270.09
+null
 ],
 [
-"2115553046",
+"2117549823",
 "24009082",
 "Skippack Township",
 "10/28/2026",
 "Perkiomen Valley Sch...",
 "Martin Michael E. & ...",
 "427 Dolores Drive Collegeville PA 19426",
-10933.98
+null
 ],
 [
-"2115553053",
+"2117549830",
 "24009516",
 "Upper Dublin Township",
 "10/28/2026",
 "School District of U...",
 "Alekna James P. & Al...",
 "1606 East Butler Pike Ambler PA 19002",
-8703.26
+null
 ],
 [
-"2115553056",
+"2117549833",
 "24009789",
 "Lower Pottsgrove Township",
 "10/28/2026",
 "Pottsgrove School Di...",
 "Capps Mark D....",
 "968 Valley Court Pottstown PA 19464",
-7698.85
+null
 ],
 [
-"2115553058",
+"2117549835",
 "24010200",
 "Souderton Borough",
 "10/28/2026",
 "Souderton Area Schoo...",
 "Welber Adrienne...",
 "29 Penn Avenue Souderton PA 18964",
-5685.64
+null
 ],
 [
-"2115553060",
+"2117549837",
 "24010619",
 "Pottstown Borough",
 "10/28/2026",
 "Pottstown School Dis...",
 "Hess April L....",
 "655 Beech Street Pottstown PA 19464",
-2782.63
+null
 ],
 [
-"2115553067",
+"2117549844",
 "24012488",
 "West Norriton Township",
 "10/28/2026",
 "West Norriton Townsh...",
 "Bisignaro Leonard G,...",
 "112 Liberty Avenue Norristown PA 19403",
-4086.04
+null
 ],
 [
-"2115553069",
+"2117549846",
 "24012766",
 "Upper Dublin Township",
 "10/28/2026",
 "School District of U...",
 "Kehan Thomas P....",
 "603 Creek Drive Ambler PA 19002",
-6233.92
+null
 ],
 [
-"2115553070",
+"2117549847",
 "24012897",
 "North Wales Borough",
 "10/28/2026",
 "Federal Home Loan Mo...",
 "Conley Kathy M. & Lu...",
 "113 South 5th Street North Wales PA",
-202602.89
+null
 ],
 [
-"2115553074",
+"2117549851",
 "24013824",
 "Abington Township",
 "10/28/2026",
 "Township of Abington...",
 "Sheehan Bryan & Shee...",
 "1422 Highland Avenue Abington PA 19001",
-1738.61
+null
 ],
 [
-"2115553075",
+"2117549852",
 "24013835",
 "Plymouth Township",
 "10/28/2026",
 "US Bank Trust N.A., ...",
 "Scalora Dara G. AKA ...",
 "205 Rittenhouse Square Plymouth Meeting PA 19462",
-2596.33
+null
 ],
 [
-"2115553076",
+"2117549853",
 "25000101",
 "Lower Moreland Township",
 "10/28/2026",
 "Lower Moreland Towns...",
 "Sargent Lea B. & Sar...",
 "3377 Paper Mill Road Moreland Township PA 19006",
-27731.49
+null
 ],
 [
-"2115553080",
+"2117549857",
 "25000325",
 "Cheltenham Township",
 "10/28/2026",
 "The Bank of New York...",
 "Wilson Henry A, Asse...",
 "7315 Oak Lane Road Melrose Park PA 19027",
-3142.52
+null
 ],
 [
-"2115553089",
+"2117549866",
 "25001345",
 "Hatfield Borough",
 "10/28/2026",
 "QNB Bank...",
 "Krol Kristen...",
 "73 Blaine Avenue Hatfield PA 19440",
-2171.09
+null
 ],
 [
-"2115553091",
+"2117549867",
+"25001403",
+"Upper Dublin Township",
+"10/28/2026",
+"GITSIT SOLUTIONS, LL...",
+"Bathini Construction...",
+"1710 Twining Road Willow Grove PA 19090",
+null
+],
+[
+"2117549868",
 "25001583",
 "East Norriton Township",
 "10/28/2026",
 "Lakeview Loan Servic...",
 "Ulmer Courtney A. a/...",
 "2202 Carol Lane East Norriton PA 19401",
-2738.91
+null
 ],
 [
-"2115553096",
+"2117549873",
 "25002236",
 "Upper Providence Township",
 "10/28/2026",
 "Township of Upper Pr...",
 "Boyle Steven & Boyle...",
 "215 Vaughn Road Royersford PA 19468",
-2770.46
+null
 ],
 [
-"2115553097",
+"2117549874",
 "25002255",
 "Upper Providence Township",
 "10/28/2026",
 "Township of Upper Pr...",
 "Cressman Karen L....",
 "8 Cochise Lane Royersford PA 19468",
-2229.65
+null
 ],
 [
-"2115553099",
+"2117549876",
 "25002563",
 "Upper Providence Township",
 "10/28/2026",
 "Township of Upper Pr...",
 "Gulgule Jitendra V. ...",
 "308 Country Ridge Drive Royersford PA 19468",
-3015.18
+null
 ],
 [
-"2115553105",
+"2117549882",
 "25003030",
 "Abington Township",
 "10/28/2026",
 "Township of Abington...",
 "Pringle Charles...",
 "2452 Kenderton Avenue Roslyn PA 19001",
-1569.07
+null
 ],
 [
-"2115553106",
+"2117549883",
 "25003206",
 "Abington Township",
 "10/28/2026",
 "Township of Abington...",
 "Discavage George W. ...",
 "511 Penn Avenue Ardsley PA 19038",
-2194.2
+null
 ],
 [
-"2115553115",
+"2117549892",
 "25004174",
 "Cheltenham Township",
 "10/28/2026",
 "Wells Fargo Bank N.A...",
 "Fritz Sim Rachael  f...",
 "7812 Tookany Creek Parkway Elkins Park PA 19027",
-2542.57
+null
 ],
 [
-"2115553117",
+"2117549894",
 "25004539",
 "Pottstown Borough",
 "10/28/2026",
 "Pottstown School Dis...",
 "Mt. Olive Pentecosta...",
 "379 Beech Street Pottstown PA 19464",
-3285.63
+null
 ],
 [
-"2115553123",
+"2117549900",
 "25005155",
 "Lower Merion Township",
 "10/28/2026",
 "PHH Mortgage Corpora...",
 "Travers Terris, sole...",
 "1001 City Avenue Unit WB512 Wynnewood PA 19096",
-3742.22
+null
 ],
 [
-"2115553133",
+"2117549910",
 "25005655",
 "Towamencin Township",
 "10/28/2026",
 "U.S. Bank Trust Comp...",
 "Thompson Rose M....",
 "602 Freedom Circle Condo 323 Harleysville PA 19438",
-3429.46
+null
 ],
 [
-"2115553139",
+"2117549916",
 "25006435",
 "Trappe Borough",
 "10/28/2026",
 "Perkiomen Valley Sch...",
 "105 Cherry, L.L.C....",
 "105 Cherry Avenue Trappe PA 19426",
-11073.99
+null
 ],
 [
-"2115553140",
+"2117549917",
 "25006480",
 "Upper Gwynedd Township",
 "10/28/2026",
 "U.S. Bank Trust NA, ...",
 "Lawlor Carol L., Law...",
 "300 Haines Drive North Wales PA 19454",
-3855.62
+null
 ],
 [
-"2115553143",
+"2117549920",
 "25006527",
 "Abington Township",
 "10/28/2026",
 "Freedom Mortgage Cor...",
 "Berry Richard T. III...",
 "2132 Parkdale Avenue Glenside PA 19038",
-2157.64
+null
 ],
 [
-"2115553144",
+"2117549921",
 "25006602",
 "Pottstown Borough",
 "10/28/2026",
 "Pottstown School Dis...",
 "Smith Donald...",
 "253 Chestnut Street Pottstown PA 19464",
-1758.08
+null
 ],
 [
-"2115553149",
+"2117549926",
 "25007164",
 "Pottstown Borough",
 "10/28/2026",
 "Freedom Mortgage Cor...",
 "Williams Susie...",
 "58 Walnut Street Pottstown PA 19464",
-169653.97
+null
 ],
 [
-"2115553150",
+"2117549927",
 "25007250",
 "Upper Pottsgrove Township",
 "10/28/2026",
 "Rocket Mortgage, LLC...",
 "Zachary R Gumbarge; ...",
 "575 Pineford Road Pottstown PA 19464",
-94317.48
+null
 ],
 [
-"2115553152",
+"2117549929",
 "25007429",
 "Franconia Township",
 "10/28/2026",
 "Souderton Area Schoo...",
 "32 SCR L.L.C....",
 "32 County Line Road Souderton PA 18964",
-6554.33
+null
 ],
 [
-"2115553154",
+"2117549931",
 "25007482",
 "East Norriton Township",
 "10/28/2026",
 "PNC Bank, N.A....",
 "Clemens James A., Ex...",
 "2029 Birchwood Drive East Norriton PA 19401",
-142076.12
+null
 ],
 [
-"2115553157",
+"2117549934",
 "25007686",
 "Salford Township",
 "10/28/2026",
 "Souderton Area Schoo...",
 "The Marcia J. Baker-...",
 "612 Hill Road Green Lane PA 18054",
-11088.77
+null
 ],
 [
-"2115553162",
+"2117549939",
 "25008118",
 "Hatfield Township",
 "10/28/2026",
 "Lakeview Loan Servic...",
 "Lynch David A/K/A Ly...",
 "2360 Cambridge Circle Hatfield PA 19440",
-2500.24
+null
 ],
 [
-"2115553165",
+"2117549942",
 "25008290",
 "Upper Moreland Township",
 "10/28/2026",
 "Lakeview Loan Servic...",
 "Varshanidze Irakli...",
 "7 Armour Road Hatboro PA 19040",
-3581.22
+null
 ],
 [
-"2115553166",
+"2117549943",
 "25008351",
 "Lower Providence Township",
 "10/28/2026",
 "Nationstar Mortgage ...",
 "Magill F Douglas, Jr...",
 "2992 Second Street Norristown PA 19403",
-331581.9
+null
 ],
 [
-"2115553178",
+"2117549954",
+"25009035",
+"Whitpain Township",
+"10/28/2026",
+"Wells Fargo Bank, NA...",
+"Smalls, Jr. Ezekiel ...",
+"1798 Sherwood Drive Blue Bell PA 19422",
+null
+],
+[
+"2117549955",
 "25009208",
 "Lower Pottsgrove Township",
 "10/28/2026",
 "Maple Glen Village H...",
 "Hatfield Joseph P....",
 "630 Oaktree Court Pottstown PA 19464",
-7574.28
+null
 ],
 [
-"2115553186",
+"2117549963",
 "25009743",
 "Pottstown Borough",
 "10/28/2026",
 "Pottstown School Dis...",
 "Tri-County Food Dist...",
 "244 Shoemakere Road Pottstown PA 19464",
-69076.03
+null
 ],
 [
-"2115553191",
+"2117549968",
 "25010300",
 "Cheltenham Township",
 "10/28/2026",
 "Cheltenham School Di...",
 "Clarke Rohan...",
 "7825 Park Avenue Elkins Park PA 19027",
-11601.79
+null
 ],
 [
-"2115553192",
+"2117549969",
 "25010376",
 "Montgomery Township",
 "10/28/2026",
 "US Bank Trust Nation...",
 "Baxter Dennis & Baxt...",
 "109 Sassafras Drive North Wales PA 19454",
-3042.97
+null
 ],
 [
-"2115553193",
+"2117549970",
 "25010399",
 "Pottstown Borough",
 "10/28/2026",
 "Portnoff Law Associa...",
 "Alicia M. Murray...",
 "219 North Washington Street Pottstown PA 19464",
-4349.9
+null
 ],
 [
-"2115553194",
+"2117549971",
 "25010439",
 "Abington Township",
 "10/28/2026",
 "Newrez Llc D/B/A She...",
 "Cole Verna S...",
 "2153 Kent Road Abington PA 19001",
-38214.9
+null
 ],
 [
-"2115553200",
+"2117549977",
 "25010748",
 "Norristown Borough",
 "10/28/2026",
 "Us Bank Trust N.A., ...",
 "Lowery Christina...",
 "1640 Powel Street Norristown PA 19401",
-2471.18
+null
 ],
 [
-"2115553214",
+"2117549991",
 "25011498",
 "West Pottsgrove Township",
 "10/28/2026",
 "Lakeview Loan Servic...",
 "Rivera Antonio...",
 "977 Von Steuben Drive Stowe PA 19464",
-175658.01
+null
 ],
 [
-"2115553219",
+"2117549996",
 "25011811",
 "Pottstown Borough",
 "10/28/2026",
 "Pennymac Loan Servic...",
 "Barnes Travis...",
 "452 North Charlotte Street Pottstown PA 19464",
-223755.5
+null
 ],
 [
-"2115553222",
+"2117549999",
 "25011900",
 "Trappe Borough",
 "10/28/2026",
 "Perkiomen Valley Sch...",
 "Moore Gerald W ,Jr....",
 "313 Laurel Drive Trappe PA 19426",
-5929.16
+null
 ],
 [
-"2115553240",
+"2117550017",
 "25013144",
 "Lower Merion Township",
 "10/28/2026",
 "U.S. Bank N.A., niii...",
 "Robinson David G. Jr...",
 "629 Spruce Lane Villanova PA 19085",
-1062394.94
+null
 ],
 [
-"2115553246",
+"2117550023",
 "25013959",
 "Upper Moreland Township",
 "10/28/2026",
 "Wells Fargo Bank, NA...",
 "Goodrich Raymond V &...",
 "2613 Horsham Road Hatboro PA 19040",
-2990.04
+null
 ],
 [
-"2115553249",
+"2117550026",
 "25014108",
 "Abington Township",
 "10/28/2026",
 "Carrington Mortgage ...",
 "Goode Alfred...",
 "1555 Osbourne Avenue Abington aka Roslyn PA 19001",
-275056.07
+null
 ],
 [
-"2115553254",
+"2117550028",
+"25014233",
+"Norristown Borough",
+"10/28/2026",
+"Lakeview Loan Servic...",
+"Delgado Jennifer M. ...",
+"1202 Dekalb Street Bldg 3, #108 Norristown PA 19401",
+null
+],
+[
+"2117550031",
 "25014486",
 "Souderton Borough",
 "10/28/2026",
 "Freedom Mortgage Cor...",
 "Nouansavanh Dave, No...",
 "124 Washington Avenue Souderton PA 18964",
-188320.62
+null
 ],
 [
-"2115553257",
+"2117550034",
 "25014656",
 "Royersford Borough",
 "10/28/2026",
 "Pine Villa Condomini...",
 "Clark Neil S....",
 "447 Pine Street Unit J4 Royersford PA 19468",
-24840.58
+null
 ],
 [
-"2115553261",
+"2117550038",
 "25014830",
 "Montgomery Township",
 "10/28/2026",
 "Deutsche Bank Nation...",
 "Caputo Keith F. A/K/...",
 "130 Raven Hollow Drive North Wales PA 19454",
-407453.48
+null
 ],
 [
-"2115553268",
+"2117550045",
 "26000261",
 "Hatfield Borough",
 "10/28/2026",
 "Onity Mortgage Corpo...",
 "Bruscia James P....",
 "216 South Main Street Hatfield PA 19440",
-248461.01
+null
 ],
 [
-"2115553274",
+"2117550051",
 "26000604",
 "Abington Township",
 "10/28/2026",
 "CitiBank, N.A., niii...",
 "Galanti Marian...",
 "330 Moreland Road Huntingdon Valley PA 19006",
-270858.94
+null
 ],
 [
-"2115553276",
+"2117550053",
 "26000751",
 "Norristown Borough",
 "10/28/2026",
 "U.S. Bank N.A. niiic...",
 "Williams Sam R., Wil...",
 "1115 Green Street Norristown PA 19401",
-11339.57
+null
 ],
 [
-"2115553277",
+"2117550054",
 "26000850",
 "Montgomery Township",
 "10/28/2026",
 "U.S. Bank Trust Comp...",
 "Caldwell Keith & Pla...",
 "2107 Jefferson Court aka 2107 Jefferson St North Wales PA 19454",
-3460.69
+null
 ],
 [
-"2115553282",
+"2117550055",
+"26000952",
+"Lower Merion Township",
+"10/28/2026",
+"U.S. Bank Trust Comp...",
+"Zenobi Janine A....",
+"502 Rockavon Road Narberth PA 19072",
+null
+],
+[
+"2117550060",
 "26001534",
 "Pottstown Borough",
 "10/28/2026",
 "Us Bank Trust N.A., ...",
 "Clark John & Unknown...",
 "620 Beech Street Pottstown PA 19464",
-53251.77
+null
 ],
 [
-"2115553288",
+"2117550067",
 "26003034",
 "New Hanover Township",
 "10/28/2026",
 "M & T Bank...",
 "Mallis Nicholas...",
 "3134 Middle Creek Road Gilbertsville PA 19525",
-163148.84
+null
 ],
 [
-"2115553291",
+"2117550071",
 "26003652",
 "Worcester Township",
 "10/28/2026",
 "Dollar Bank, Federal...",
 "Kelly James A, III &...",
 "1401 Reiner Road Eagleville PA 19403",
-561052.38
+null
 ],
 [
-"2115553292",
+"2117550072",
 "26003868",
 "Lower Providence Township",
 "10/28/2026",
 "Provident Funding As...",
 "Herbert Stephen, Lud...",
 "113 East Mount Kirk Avenue Eagleville a/k/a Norristown PA 19403",
-2741.05
+null
 ],
 [
-"2115553293",
+"2117550073",
 "26004000",
 "Conshohocken Borough",
 "10/28/2026",
 "Rocket Mortgage, LLC...",
 "McCrudden Rebecca E,...",
 "325 East 9th Avenue Conshohocken PA 19428",
-182275.99
+null
 ],
 [
-"2115553296",
+"2117550076",
 "26004767",
 "East Norriton Township",
 "10/28/2026",
 "U.S. Bank NA NIIICBS...",
 "Parzell, LLC & Linds...",
 "3168 Sunset Avenue Norristown PA 19403",
-326280.74
+null
 ],
 [
-"2115553299",
+"2117550079",
 "26008127",
 "Pottstown Borough",
 "10/28/2026",
 "PNC Bank, National A...",
 "TRI-County Food Dist...",
 "244 Shoemaker Road Pottstown PA 19464",
-3884140.98
+null
 ],
 [
-"2115552919",
+"2117549678",
+"14012969",
+"Horsham Township",
+"12/2/2026",
+"U.S. Bank National A...",
+"Josephson Daniel H. ...",
+"71 Black Watch Court Horsham PA 19044",
+null
+],
+[
+"2117549696",
 "19002005",
 "Skippack Township",
 "12/2/2026",
 "Citizens Bank, N.A....",
 "Schaeffer Bethany L....",
 "2046 Fort Bevon Road Harleysville PA 19438",
-2429.77
+null
 ],
 [
-"2115552970",
+"2117549747",
 "23004283",
 "Lower Moreland Township",
 "12/2/2026",
 "Penn Community Bank...",
 "Hayat Hagay...",
 "3549 Meadowlark Drive Huntingdon Valley PA 19006",
-2845.24
+null
 ],
 [
-"2115552971",
+"2117549748",
 "23004674",
 "Royersford Borough",
 "12/2/2026",
 "PNC Bank, NA...",
 "Chuck Mark T., Indiv...",
 "337 Walnut Street Royersford PA 19468",
-2998.01
+null
 ],
 [
-"2115552990",
+"2117549767",
 "23009863",
 "Abington Township",
 "12/2/2026",
 "Township of Abington...",
 "Rothberg Rei W. Roth...",
 "825 Coates Road Meadowbrook PA 19046",
-1354.34
+null
 ],
 [
-"2115553031",
+"2117549808",
 "24007091",
 "Upper Providence Township",
 "12/2/2026",
 "The Meadows Condomin...",
 "Newhart Scott J....",
 "1022 Meadowview Lane Mont Clare PA 19453",
-6182.3
+null
 ],
 [
-"2115553037",
+"2117549814",
 "24007513",
 "Cheltenham Township",
 "12/2/2026",
 "Us Bank Trust Nation...",
 "Simbo Ada M...",
 "1822 Erlen Road Elkins Park PA 19027",
-2190.05
+null
 ],
 [
-"2115553063",
+"2117549840",
 "24011602",
 "Upper Moreland Township",
 "12/2/2026",
 "School District of U...",
 "GarofanoThomas J. & ...",
 "801 Division Avenue Willow Grove PA 19090",
-4560.91
+null
 ],
 [
-"2115553079",
+"2117549856",
 "25000179",
 "Douglass Township",
 "12/2/2026",
 "The Huntington Natio...",
 "Lannen Lawrence J. &...",
 "75 Walter Drive Gilbertsville PA 19525",
-2686.92
+null
 ],
 [
-"2115553102",
+"2117549879",
 "25002903",
 "Upper Moreland Township",
 "12/2/2026",
 "School District of U...",
 "Reiser Michael J. & ...",
 "215 Ellis Road Willow Grove PA 19090",
-5117.25
+null
 ],
 [
-"2115553122",
+"2117549899",
 "25005013",
 "Abington Township",
 "12/2/2026",
 "Deutsche Bank Nation...",
 "Jennifer Thomas aka ...",
 "1414 Edgewood Avenue Abington PA 19001",
-154772.69
+null
 ],
 [
-"2115553155",
+"2117549932",
 "25007552",
 "North Wales Borough",
 "12/2/2026",
 "JP Morgan Chase Bank...",
 "Rittenhouse Debbie J...",
 "699 Chruch Street North Wales PA 19454",
-198540.56
+null
 ],
 [
-"2115553156",
+"2117549933",
 "25007653",
 "Lansdale Borough",
 "12/2/2026",
 "Pennymac Loan Servic...",
 "Santos Patricia A....",
 "976 Wedgewood Drive Lansdale PA 19446",
-126472.68
+null
 ],
 [
-"2115553226",
+"2117550003",
 "25012228",
 "Cheltenham Township",
 "12/2/2026",
 "Amerihome Mortgage C...",
 "Farley Laurlynne...",
 "827 Rock Lane Elkins Park PA 19027",
-152347.4
+null
 ],
 [
-"2115553269",
+"2117550046",
 "26000329",
 "Upper Merion Township",
 "12/2/2026",
 "Lakeview Loan Servic...",
 "Nuskey Brian M. & Nu...",
 "361 Anthony Road King of Prussia PA 19406",
-294661.4
+null
 ],
 [
-"2115553271",
+"2117550048",
 "26000569",
 "Rockledge Borough",
 "12/2/2026",
 "Lake Michigan Credit...",
 "Conlan Margaret D Ak...",
 "7938 Filmore Street Jenkintown PA 19046",
-2058.61
+null
 ],
 [
-"2115553280",
+"2117550057",
 "26001035",
 "Upper Pottsgrove Township",
 "12/2/2026",
 "MidFirst Bank...",
 "Raysor Denise P....",
 "909 Willow Street Pottstown PA 19464",
-117352.12
+null
 ],
 [
-"2115553283",
+"2117550059",
+"26001307",
+"Towamencin Township",
+"12/2/2026",
+"Lakeview Loan Servic...",
+"Garay Andrea & Courc...",
+"1848 Flintlock Circle Lansdale PA 19446",
+null
+],
+[
+"2117550061",
 "26001536",
 "Lower Gwynedd Township",
 "12/2/2026",
 "PHH Asset Services L...",
 "Tierno Michael aka T...",
 "126 Nottoway Drive Condo L 5F Aka Unit L5F Blue Bell AKA Pellyn PA 19422",
-247435.7
+null
 ],
 [
-"2115553287",
+"2117550063",
+"26002598",
+"Cheltenham Township",
+"12/2/2026",
+"U.S. Bank Trust N.A....",
+"Colon Jose aka  Colo...",
+"7313 Chestnut Avenue Elkins Park PA 19027",
+null
+],
+[
+"2117550066",
 "26002986",
 "West Norriton Township",
 "12/2/2026",
 "Wells Fargo Bank, N....",
 "DePaul Louis A, Jr.,...",
 "193 Oxford Circle Norristown aka West Norriton PA 19403",
-165765.23
+null
 ],
 [
-"2115553289",
+"2117550068",
+"26003428",
+"Horsham Township",
+"12/2/2026",
+"Select Portfolio Ser...",
+"Cathcart Patrick...",
+"41 Windsor Road Condo #41 Horsham PA 19044",
+null
+],
+[
+"2117550069",
 "26003441",
 "",
 "12/2/2026",
 "FTS Capital, LLC...",
 "Cooper Mary Anne, He...",
 "2820 Galloway Avenue Roslyn PA 19001",
-576010.84
+null
 ]
 ]
 }
