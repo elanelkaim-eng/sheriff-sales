@@ -80,30 +80,44 @@ def parse_list(html):
         leads.append({
             "pid": pid_m.group(1), "sheriff": cells[1], "township": cells[2],
             "saleDate": cells[3], "plaintiff": cells[4], "defendant": cells[5],
-            "address": cells[6], "judgment": None,
+            "address": cells[6], "judgment": None, "costs": None,
         })
     return leads
 
 
-def parse_judgment(html):
-    m = re.search(
-        r"(?:Approx(?:imate)?\.?\s*(?:Upset|Judgment)\*?|Judgment)\s*[:<][^$]*\$\s*([\d,]+(?:\.\d{2})?)",
-        html, re.I)
+def _amt(m):
+    try:
+        return float(m.group(1).replace(",", ""))
+    except (ValueError, AttributeError):
+        return None
+
+
+def parse_detail_fields(html):
+    """CivilView detail page: Debt Amount is the real judgment figure;
+    'All Costs' is sheriff costs. Also grab the full (untruncated)
+    defendant name. Never fall back to 'first $ on the page'."""
+    text = BeautifulSoup(html, "html.parser").get_text("\n", strip=True)
+    out = {}
+    m = re.search(r"Debt\s*Amount:?\s*\n?\s*\$\s*([\d,]+(?:\.\d{2})?)", text, re.I)
     if not m:
-        m = re.search(r"\$\s*([\d,]+\.\d{2})", html)
-    if m:
-        try:
-            return float(m.group(1).replace(",", ""))
-        except ValueError:
-            return None
-    return None
+        m = re.search(r"(?:Approx(?:imate)?\.?\s*)?(?:Upset|Judgment)\s*(?:Amount)?\*?:?\s*\n?\s*\$\s*([\d,]+(?:\.\d{2})?)", text, re.I)
+    out["judgment"] = _amt(m)
+    out["costs"] = _amt(re.search(r"All\s*Costs:?\s*\n?\s*\$\s*([\d,]+(?:\.\d{2})?)", text, re.I))
+    dm = re.search(r"Defendant:?\s*\n(.+)", text)
+    if dm and len(dm.group(1).strip()) > 3:
+        out["defendant"] = dm.group(1).strip()
+    return out
 
 
 def enrich_details(leads, session):
     for i, lead in enumerate(leads, 1):
         try:
             r = get(f"{BASE}/Sales/SaleDetails?PropertyId={lead['pid']}", session)
-            lead["judgment"] = parse_judgment(r.text)
+            d = parse_detail_fields(r.text)
+            lead["judgment"] = d.get("judgment")
+            lead["costs"] = d.get("costs")
+            if d.get("defendant"):
+                lead["defendant"] = d["defendant"]
         except Exception as e:
             print(f"  detail {lead['pid']}: {e}", file=sys.stderr)
         if i % 25 == 0:
@@ -354,7 +368,7 @@ def main():
     skip_trace_new(leads)
 
     fields = ["pid", "sheriff", "township", "saleDate", "plaintiff", "defendant",
-              "address", "judgment", "assessed", "estValue", "landUse", "propType",
+              "address", "judgment", "costs", "assessed", "estValue", "landUse", "propType",
               "sqft", "yearBuilt", "beds", "baths", "owner", "ownerMail",
               "absentee", "lastSold", "lastPrice", "parcel"]
     out = {

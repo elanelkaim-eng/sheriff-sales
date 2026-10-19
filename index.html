@@ -282,7 +282,7 @@ async function boot() {
     o.street = m ? m[1] : o.address; o.zip = m && m[2] ? m[2] : "";
     o.city = String(o.township || "").replace(/ (Township|Borough)$/, "");
     o.addr = o.address;
-    o.equity = (o.estValue != null && o.judgment != null) ? Math.round(o.estValue - o.judgment) : null;
+    o.equity = (o.estValue != null && o.judgment != null) ? Math.round(o.estValue - o.judgment - (o.costs || 0)) : null;
     o.equityPct = (o.equity != null && o.estValue) ? Math.round(o.equity / o.estValue * 100) : null;
     o.contact = CONTACTS[o.sheriff] || null;
     const s = store.get(o.sheriff);
@@ -521,6 +521,7 @@ function openDrawer(sheriff) {
         <div><div class="muted">Est. equity</div><div class="bigval" style="color:${l.equity > 0 ? "var(--ever)" : "var(--rust)"}">${money(l.equity)}${l.equityPct != null ? ` <span style="font-size:13px;">(${l.equityPct}%)</span>` : ""}</div></div>
       </div>
       <div class="kv">
+        <span class="k">Sheriff costs</span><span>${money(l.costs)}</span>
         <span class="k">Assessed</span><span>${money(l.assessed)} (land use ${esc(l.landUse || "—")})</span>
         <span class="k">Size</span><span>${l.sqft ? Number(l.sqft).toLocaleString() + " sqft" : "—"}${l.beds ? " · " + esc(String(l.beds).trim()) + " bd" : ""}${l.baths ? " / " + esc(String(l.baths).trim()) + " ba" : ""}${l.yearBuilt ? " · built " + esc(String(l.yearBuilt).trim()) : ""}</span>
         <span class="k">Last sold</span><span>${l.lastSold ? esc(l.lastSold) + (l.lastPrice ? " for " + money(l.lastPrice) : "") : "—"}</span>
