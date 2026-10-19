@@ -22,7 +22,6 @@
   button { font: inherit; cursor: pointer; }
   select, input, textarea { font: inherit; color: var(--ink); }
 
-  /* ---------- passcode gate ---------- */
   #gate { position: fixed; inset: 0; background: var(--bg); display: flex; align-items: center; justify-content: center; z-index: 1000; }
   #gate .card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 36px 40px; width: 340px; text-align: center; box-shadow: 0 2px 14px rgba(41,38,27,.06); }
   #gate .shield { width: 52px; height: 52px; border-radius: 13px; background: var(--ever); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 14px; }
@@ -30,8 +29,7 @@
   #gate button { width: 100%; padding: 10px; background: var(--ever); color: #fff; border: none; border-radius: 8px; font-weight: 600; }
   #gate .err { color: var(--rust); font-size: 12.5px; min-height: 18px; margin-top: 8px; }
 
-  /* ---------- app shell ---------- */
-  #app { display: none; max-width: 1240px; margin: 0 auto; padding: 22px 26px 80px; }
+  #app { display: none; max-width: 1320px; margin: 0 auto; padding: 22px 26px 80px; }
   header.top { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; flex-wrap: wrap; }
   .logo { width: 38px; height: 38px; border-radius: 10px; background: var(--ever); display: flex; align-items: center; justify-content: center; flex: 0 0 auto; }
   .title h1 { font-size: 17px; font-weight: 700; }
@@ -41,25 +39,29 @@
   .dot { width: 8px; height: 8px; border-radius: 50%; }
   .dot.ok { background: var(--ever); } .dot.stale { background: var(--amber); }
 
-  nav.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--line); margin-bottom: 18px; }
+  nav.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--line); margin-bottom: 18px; flex-wrap: wrap; }
   nav.tabs button { background: none; border: none; padding: 9px 16px; font-size: 13.5px; font-weight: 600; color: var(--ink3); border-bottom: 2px solid transparent; margin-bottom: -1px; }
   nav.tabs button.on { color: var(--ever); border-bottom-color: var(--ever); }
+  nav.tabs button .badge { background: var(--rust); color: #fff; border-radius: 999px; font-size: 10.5px; padding: 1px 7px; margin-left: 5px; }
 
-  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-bottom: 18px; }
+  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 18px; }
   .kpi { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
-  .kpi .v { font-size: 24px; font-weight: 700; margin: 2px 0; }
+  .kpi .v { font-size: 23px; font-weight: 700; margin: 2px 0; }
   .kpi .s { font-size: 11.5px; color: var(--ink3); }
 
   .filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; align-items: center; }
-  .filters input[type=search] { padding: 8px 12px; border: 1px solid var(--line2); border-radius: 8px; width: 260px; background: var(--surface); }
-  .filters select { padding: 8px 10px; border: 1px solid var(--line2); border-radius: 8px; background: var(--surface); }
+  .filters input[type=search] { padding: 8px 12px; border: 1px solid var(--line2); border-radius: 8px; width: 230px; background: var(--surface); }
+  .filters select, .filters input[type=number] { padding: 8px 10px; border: 1px solid var(--line2); border-radius: 8px; background: var(--surface); }
+  .filters input[type=number] { width: 110px; }
   .filters .count { font-size: 12px; color: var(--ink3); margin-left: auto; }
   .btn { padding: 8px 14px; border: 1px solid var(--line2); background: var(--surface); border-radius: 8px; font-size: 13px; font-weight: 600; color: var(--ink2); }
   .btn.primary { background: var(--ever); border-color: var(--ever); color: #fff; }
+  .btn.small { padding: 5px 10px; font-size: 12px; }
 
   table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
-  thead th { text-align: left; font-size: 10.5px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--ink3); padding: 10px 12px; background: var(--wash-hi); border-bottom: 1px solid var(--line); cursor: pointer; user-select: none; white-space: nowrap; }
-  tbody td { padding: 10px 12px; border-bottom: 1px solid var(--line); font-size: 13px; vertical-align: top; }
+  thead th { text-align: left; font-size: 10.5px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--ink3); padding: 10px 10px; background: var(--wash-hi); border-bottom: 1px solid var(--line); cursor: pointer; user-select: none; white-space: nowrap; }
+  thead th.sorted { color: var(--ever); }
+  tbody td { padding: 10px 10px; border-bottom: 1px solid var(--line); font-size: 13px; vertical-align: top; }
   tbody tr { cursor: pointer; }
   tbody tr:hover { background: var(--wash-hi); }
   .addr { font-weight: 600; }
@@ -69,8 +71,12 @@
   .days-soon { color: var(--amber); background: var(--amber-wash); }
   .days-later { color: var(--ink2); background: var(--wash); }
   .days-past { color: var(--ink4); background: var(--wash); text-decoration: line-through; }
+  .eq-pos { color: var(--ever); font-weight: 700; }
+  .eq-big { color: var(--ever); font-weight: 700; }
+  .type-chip { background: var(--wash); color: var(--ink2); }
+  .absentee-chip { background: var(--info-wash); color: var(--info); }
+  .contact-chip { background: var(--ever-wash); color: var(--ever); }
 
-  /* status colors */
   .st-new { color: var(--info); background: var(--info-wash); }
   .st-researching { color: var(--amber); background: var(--amber-wash); }
   .st-contacted { color: #6b21a8; background: #f3e8ff; }
@@ -79,7 +85,6 @@
   .st-won { color: #fff; background: var(--ever); }
   .st-dead { color: var(--ink3); background: var(--wash); }
 
-  /* pipeline */
   .pipe { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; align-items: start; }
   .col { background: var(--wash); border: 1px solid var(--line); border-radius: 12px; padding: 10px; }
   .col h3 { font-size: 12px; font-weight: 700; color: var(--ink2); padding: 4px 6px 10px; display: flex; justify-content: space-between; }
@@ -89,14 +94,21 @@
   .card .m { font-size: 11.5px; color: var(--ink3); margin-top: 2px; }
   .rem { font-size: 11px; font-weight: 700; margin-top: 6px; display: inline-block; padding: 2px 8px; border-radius: 999px; }
 
-  /* drawer */
+  /* outreach queue */
+  .queue-group { margin-bottom: 20px; }
+  .queue-group h3 { font-size: 13px; font-weight: 700; margin-bottom: 8px; color: var(--ink2); }
+  .qcard { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; margin-bottom: 8px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  .qcard .info { flex: 1; min-width: 220px; cursor: pointer; }
+  .qcard .acts { display: flex; gap: 6px; flex-wrap: wrap; }
+  .qcard .acts a, .qcard .acts button { text-decoration: none; }
+
   #ovl { position: fixed; inset: 0; background: rgba(41,38,27,.32); display: none; z-index: 100; }
-  #drawer { position: fixed; top: 0; right: 0; bottom: 0; width: min(520px, 100%); background: var(--surface); border-left: 1px solid var(--line); display: none; z-index: 101; overflow-y: auto; padding: 24px 26px 60px; }
+  #drawer { position: fixed; top: 0; right: 0; bottom: 0; width: min(540px, 100%); background: var(--surface); border-left: 1px solid var(--line); display: none; z-index: 101; overflow-y: auto; padding: 24px 26px 60px; }
   #drawer.open, #ovl.open { display: block; }
   #drawer h2 { font-size: 17px; margin: 2px 0 2px; }
   #drawer .close { position: absolute; top: 16px; right: 18px; background: none; border: none; font-size: 22px; color: var(--ink3); }
   .panel { border: 1px solid var(--line); border-radius: 12px; margin-top: 14px; overflow: hidden; }
-  .panel > .hd { padding: 9px 14px; background: var(--wash-hi); border-bottom: 1px solid var(--line); }
+  .panel > .hd { padding: 9px 14px; background: var(--wash-hi); border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; }
   .panel > .bd { padding: 12px 14px; }
   .kv { display: grid; grid-template-columns: 130px 1fr; gap: 5px 12px; font-size: 13px; }
   .kv .k { color: var(--ink3); }
@@ -105,9 +117,15 @@
   #drawer textarea { min-height: 70px; resize: vertical; }
   .tpl-btns { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
   .tplout { white-space: pre-wrap; background: var(--wash-hi); border: 1px solid var(--line); border-radius: 8px; padding: 12px; font-size: 12.5px; margin-top: 10px; display: none; }
-
+  .bigval { font-size: 20px; font-weight: 700; }
   .note { font-size: 12px; color: var(--ink3); margin-top: 10px; }
   @media (max-width: 720px) { .kv { grid-template-columns: 1fr; } .filters input[type=search] { width: 100%; } }
+  @media print {
+    body * { visibility: hidden; }
+    #printArea, #printArea * { visibility: visible; }
+    #printArea { position: absolute; left: 0; top: 0; width: 100%; }
+    .letter { page-break-after: always; padding: 1in .75in; font: 12pt/1.6 Georgia, serif; white-space: pre-wrap; }
+  }
 </style>
 </head>
 <body>
@@ -132,12 +150,15 @@
     </div>
     <div class="spacer"></div>
     <div class="health" id="health"><span class="dot ok"></span><span>Loading…</span></div>
+    <button class="btn" onclick="document.getElementById('csvImport').click()">Import contacts</button>
+    <input type="file" id="csvImport" accept=".csv" style="display:none" onchange="importContacts(this)">
     <button class="btn" onclick="exportSkipTrace()">Skip-trace CSV</button>
     <button class="btn" onclick="exportCSV()">Export CSV</button>
   </header>
 
   <nav class="tabs">
     <button id="tab-board" class="on" onclick="setTab('board')">Leads board</button>
+    <button id="tab-queue" onclick="setTab('queue')">Outreach queue <span class="badge" id="queueBadge" style="display:none"></span></button>
     <button id="tab-pipe" onclick="setTab('pipe')">Pipeline</button>
     <button id="tab-tpl" onclick="setTab('tpl')">Templates</button>
   </nav>
@@ -146,13 +167,18 @@
 
   <section id="view-board">
     <div class="filters">
-      <input type="search" id="q" placeholder="Search address, owner, township, sheriff #…" oninput="render()">
+      <input type="search" id="q" placeholder="Search address, owner, sheriff #…" oninput="render()">
       <select id="fDate" onchange="render()"><option value="">All sale dates</option></select>
+      <select id="fType" onchange="render()"><option value="">All types</option></select>
       <select id="fStatus" onchange="render()">
         <option value="">All statuses</option>
         <option>new</option><option>researching</option><option>contacted</option>
         <option>responded</option><option>negotiating</option><option>won</option><option>dead</option>
       </select>
+      <input type="number" id="fMinEq" placeholder="Min equity $" step="10000" oninput="render()">
+      <label style="font-size:12.5px;color:var(--ink2);display:flex;align-items:center;gap:5px;">
+        <input type="checkbox" id="fAbsentee" onchange="render()"> Absentee only
+      </label>
       <label style="font-size:12.5px;color:var(--ink2);display:flex;align-items:center;gap:5px;">
         <input type="checkbox" id="fHideDead" checked onchange="render()"> Hide dead
       </label>
@@ -160,45 +186,56 @@
     </div>
     <table>
       <thead><tr>
-        <th onclick="setSort('saleDate')">Sale date</th>
-        <th onclick="setSort('addr')">Property</th>
-        <th onclick="setSort('township')">Township</th>
-        <th onclick="setSort('defendant')">Owner (defendant)</th>
-        <th onclick="setSort('plaintiff')">Plaintiff</th>
-        <th onclick="setSort('sheriff')">Sheriff #</th>
-        <th onclick="setSort('status')">Status</th>
+        <th data-k="saleDate" onclick="setSort('saleDate')">Sale date</th>
+        <th data-k="addr" onclick="setSort('addr')">Property</th>
+        <th data-k="propType" onclick="setSort('propType')">Type</th>
+        <th data-k="owner" onclick="setSort('owner')">Owner</th>
+        <th data-k="estValue" onclick="setSort('estValue')">Est. value</th>
+        <th data-k="judgment" onclick="setSort('judgment')">Judgment</th>
+        <th data-k="equity" onclick="setSort('equity')">Equity</th>
+        <th data-k="status" onclick="setSort('status')">Status</th>
       </tr></thead>
       <tbody id="rows"></tbody>
     </table>
-    <div class="note">Click any row for details, research links, and outreach templates. Statuses, notes, and follow-ups save in this browser and survive data refreshes.</div>
+    <div class="note">Click any row for details, contacts, research links, and outreach templates. Value = county assessment × common level ratio (<span id="clrNote"></span>) — an estimate, verify before making offers. Statuses and notes save in this browser.</div>
+  </section>
+
+  <section id="view-queue" style="display:none;">
+    <div class="filters">
+      <span class="muted">Touch plan: letter at 45d → letter 2 at 30d → text at 21d → call at 14d before sale. Leads advance when you update their status.</span>
+      <span class="spacer" style="flex:1"></span>
+      <button class="btn primary" onclick="printLetters()">Print letters for current group</button>
+    </div>
+    <div id="queueGroups"></div>
   </section>
 
   <section id="view-pipe" style="display:none;"><div class="pipe" id="pipeCols"></div></section>
 
   <section id="view-tpl" style="display:none;">
-    <div class="panel"><div class="hd"><span class="eyebrow">Mail letter · send at ~45 and ~30 days out</span></div><div class="bd"><pre style="white-space:pre-wrap;font:12.5px/1.6 ui-monospace,monospace;" id="tplLetter"></pre></div></div>
-    <div class="panel"><div class="hd"><span class="eyebrow">SMS · ~21 days out (TCPA: no autodialers, honor opt-outs)</span></div><div class="bd"><pre style="white-space:pre-wrap;font:12.5px/1.6 ui-monospace,monospace;" id="tplSms"></pre></div></div>
+    <div class="panel"><div class="hd"><span class="eyebrow">Mail letter · ~45 and ~30 days out</span></div><div class="bd"><pre style="white-space:pre-wrap;font:12.5px/1.6 ui-monospace,monospace;" id="tplLetter"></pre></div></div>
+    <div class="panel"><div class="hd"><span class="eyebrow">SMS · ~21 days out (send manually — TCPA)</span></div><div class="bd"><pre style="white-space:pre-wrap;font:12.5px/1.6 ui-monospace,monospace;" id="tplSms"></pre></div></div>
     <div class="panel"><div class="hd"><span class="eyebrow">Email · any time after first letter</span></div><div class="bd"><pre style="white-space:pre-wrap;font:12.5px/1.6 ui-monospace,monospace;" id="tplEmail"></pre></div></div>
   </section>
 </div>
 
 <div id="ovl" onclick="closeDrawer()"></div>
 <aside id="drawer"></aside>
+<div id="printArea"></div>
 
 <script>
 /* ============ passcode gate ============ */
-const GATE_HASH = "f58c236f317c343b61740a47dbfbd9005f0f20d971eae9d8da1863698c8fae71"; // sha256 of passcode
+const GATE_HASH = "f58c236f317c343b61740a47dbfbd9005f0f20d971eae9d8da1863698c8fae71";
 async function sha256(s) {
   if (crypto.subtle) {
     const b = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(s));
     return [...new Uint8Array(b)].map(x => x.toString(16).padStart(2, "0")).join("");
   }
-  return null; // insecure context (file://) — fall back to plain compare below
+  return null;
 }
 async function tryGate() {
   const v = document.getElementById("pw").value.trim();
   const h = await sha256(v);
-  const ok = h ? h === GATE_HASH : v === "elkaim26"; // file:// preview fallback
+  const ok = h ? h === GATE_HASH : v === "elkaim26";
   if (ok) { sessionStorage.setItem("ss_gate", "1"); openApp(); }
   else document.getElementById("gateErr").textContent = "Wrong passcode.";
 }
@@ -209,12 +246,16 @@ function openApp() {
   boot();
 }
 
-/* ============ data ============ */
-let DATA = null, LEADS = [], sortKey = "saleDate", sortDir = 1, booted = false;
+/* ============ state ============ */
+let DATA = null, LEADS = [], CONTACTS = {}, sortKey = "saleDate", sortDir = 1, booted = false;
 const STATUSES = ["new","researching","contacted","responded","negotiating","won","dead"];
 const store = {
   get(sheriff) { try { return JSON.parse(localStorage.getItem("ss_lead_" + sheriff)) || {}; } catch { return {}; } },
   set(sheriff, obj) { localStorage.setItem("ss_lead_" + sheriff, JSON.stringify(obj)); }
+};
+const cstore = {
+  load() { try { return JSON.parse(localStorage.getItem("ss_contacts")) || {}; } catch { return {}; } },
+  save(c) { localStorage.setItem("ss_contacts", JSON.stringify(c)); }
 };
 
 async function boot() {
@@ -223,98 +264,151 @@ async function boot() {
     const r = await fetch("leads.json", { cache: "no-store" });
     DATA = await r.json();
   } catch (e) {
-    document.getElementById("health").innerHTML = '<span class="dot stale"></span><span>Could not load data/leads.json — if previewing locally, run a local server or deploy to GitHub Pages.</span>';
+    document.getElementById("health").innerHTML = '<span class="dot stale"></span><span>Could not load leads.json — if previewing locally, use a local server.</span>';
     return;
   }
+  // contacts: repo file (from auto skip trace) merged with locally imported
+  try {
+    const rc = await fetch("contacts.json", { cache: "no-store" });
+    if (rc.ok) CONTACTS = await rc.json();
+  } catch (e) {}
+  Object.assign(CONTACTS, cstore.load());
+
+  const F = DATA.fields;
   LEADS = DATA.leads.map(a => {
-    const o = { pid: a[0], sheriff: a[1], township: a[2], saleDate: a[3], plaintiff: a[4], defendant: a[5], addr: a[6], judgment: a[7] };
-    const m = o.addr.match(/^(.*)\s+PA\s+(\d{5})$/);
-    o.street = m ? m[1] : o.addr; o.zip = m ? m[2] : "";
-    o.city = o.township.replace(/ (Township|Borough)$/, "");
+    const o = {};
+    F.forEach((f, i) => o[f] = a[i]);
+    const m = String(o.address || "").match(/^(.*?)\s+PA(?:\s+(\d{5}))?\s*$/);
+    o.street = m ? m[1] : o.address; o.zip = m && m[2] ? m[2] : "";
+    o.city = String(o.township || "").replace(/ (Township|Borough)$/, "");
+    o.addr = o.address;
+    o.equity = (o.estValue != null && o.judgment != null) ? Math.round(o.estValue - o.judgment) : null;
+    o.equityPct = (o.equity != null && o.estValue) ? Math.round(o.equity / o.estValue * 100) : null;
+    o.contact = CONTACTS[o.sheriff] || null;
     const s = store.get(o.sheriff);
     o.status = s.status || "new"; o.notes = s.notes || ""; o.follow = s.follow || "";
+    o.touches = s.touches || {};
     return o;
   });
   const dates = [...new Set(LEADS.map(l => l.saleDate))];
   const sel = document.getElementById("fDate");
+  sel.innerHTML = '<option value="">All sale dates</option>';
   dates.forEach(d => { const op = document.createElement("option"); op.textContent = d; sel.appendChild(op); });
+  const types = [...new Set(LEADS.map(l => l.propType).filter(Boolean))].sort();
+  const tsel = document.getElementById("fType");
+  tsel.innerHTML = '<option value="">All types</option>';
+  types.forEach(t => { const op = document.createElement("option"); op.textContent = t; tsel.appendChild(op); });
+  document.getElementById("clrNote").textContent = "factor " + (DATA.clr || "n/a");
   renderHealth(); renderTemplatesTab(); render();
 }
 
+/* ============ helpers ============ */
 function daysUntil(mdY) {
+  if (!mdY) return null;
   const [m, d, y] = mdY.split("/").map(Number);
   return Math.ceil((new Date(y, m - 1, d) - new Date()) / 86400000);
 }
 function daysChip(l) {
   const d = daysUntil(l.saleDate);
+  if (d == null) return "";
   if (d < 0) return `<span class="chip days-past">passed</span>`;
   if (d <= 14) return `<span class="chip days-urgent">${d}d</span>`;
   if (d <= 30) return `<span class="chip days-soon">${d}d</span>`;
   return `<span class="chip days-later">${d}d</span>`;
 }
 function esc(s) { return String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
-
+function money(v) { return v == null ? "—" : "$" + Math.round(v).toLocaleString(); }
+function titleCase(s) { return String(s || "").toLowerCase().replace(/\b[a-z]/g, c => c.toUpperCase()); }
+function ownerDisplay(l) { return l.owner ? titleCase(l.owner) : (l.defendant || "—").replace(/\.{3}$/, "…"); }
+function firstNameOf(l) {
+  const src = l.owner || l.defendant || "";
+  const p = src.split(/[&,]/)[0].trim().replace(/[.]/g, "");
+  const t = p.split(/\s+/);
+  return t.length > 1 ? titleCase(t[1]) : titleCase(t[0] || "there");
+}
 function renderHealth() {
   const up = new Date(DATA.updated);
   const age = Math.floor((Date.now() - up) / 86400000);
   const stale = age > 2;
   document.getElementById("health").innerHTML =
-    `<span class="dot ${stale ? "stale" : "ok"}"></span><span>CivilView · data refreshed ${up.toLocaleDateString("en-US", { month: "short", day: "numeric" })}${stale ? " · refresh due" : ""}</span>`;
+    `<span class="dot ${stale ? "stale" : "ok"}"></span><span>CivilView + county GIS · refreshed ${up.toLocaleDateString("en-US", { month: "short", day: "numeric" })}${stale ? " · refresh overdue" : ""}</span>`;
 }
 
-function renderKPIs(list) {
-  const active = LEADS.filter(l => daysUntil(l.saleDate) >= 0 && l.status !== "dead" && l.status !== "won");
+/* ============ KPIs ============ */
+function renderKPIs() {
+  const active = LEADS.filter(l => daysUntil(l.saleDate) >= 0 && !["dead","won"].includes(l.status));
   const within14 = active.filter(l => daysUntil(l.saleDate) <= 14).length;
-  const contacted = LEADS.filter(l => ["contacted","responded","negotiating","won"].includes(l.status)).length;
-  const responded = LEADS.filter(l => ["responded","negotiating","won"].includes(l.status)).length;
+  const eqs = active.map(l => l.equity).filter(x => x != null && x > 0).sort((a, b) => a - b);
+  const medEq = eqs.length ? eqs[Math.floor(eqs.length / 2)] : null;
+  const big = active.filter(l => l.equity != null && l.equity >= 100000).length;
+  const withContact = active.filter(l => l.contact && (l.contact.phones||[]).length).length;
   const next = [...new Set(LEADS.map(l => l.saleDate))].filter(d => daysUntil(d) >= 0).sort((a,b) => daysUntil(a) - daysUntil(b))[0];
   document.getElementById("kpis").innerHTML = `
-    <div class="kpi"><div class="eyebrow">Active leads</div><div class="v num">${active.length}</div><div class="s">of ${LEADS.length} total listings</div></div>
-    <div class="kpi"><div class="eyebrow">Sale ≤ 14 days</div><div class="v num" style="color:${within14 ? "var(--rust)" : "var(--ink)"}">${within14}</div><div class="s">time-critical outreach</div></div>
-    <div class="kpi"><div class="eyebrow">Next sale date</div><div class="v num" style="font-size:19px;padding-top:5px;">${next || "—"}</div><div class="s">${next ? daysUntil(next) + " days away" : ""}</div></div>
-    <div class="kpi"><div class="eyebrow">Contacted</div><div class="v num">${contacted}</div><div class="s">${responded} responded</div></div>`;
+    <div class="kpi"><div class="eyebrow">Active leads</div><div class="v num">${active.length}</div><div class="s">of ${LEADS.length} listings</div></div>
+    <div class="kpi"><div class="eyebrow">Median equity</div><div class="v num">${money(medEq)}</div><div class="s">est. value − judgment</div></div>
+    <div class="kpi"><div class="eyebrow">Equity ≥ $100k</div><div class="v num" style="color:var(--ever)">${big}</div><div class="s">priority targets</div></div>
+    <div class="kpi"><div class="eyebrow">Next sale</div><div class="v num" style="font-size:18px;padding-top:4px;">${next || "—"}</div><div class="s">${next ? daysUntil(next) + " days away" : ""}</div></div>
+    <div class="kpi"><div class="eyebrow">Have phone #</div><div class="v num">${withContact}</div><div class="s">skip-traced contacts</div></div>`;
 }
 
+/* ============ board ============ */
 function filtered() {
   const q = document.getElementById("q").value.toLowerCase();
   const fd = document.getElementById("fDate").value;
+  const ft = document.getElementById("fType").value;
   const fs = document.getElementById("fStatus").value;
+  const minEq = parseFloat(document.getElementById("fMinEq").value);
+  const abs = document.getElementById("fAbsentee").checked;
   const hideDead = document.getElementById("fHideDead").checked;
   return LEADS.filter(l =>
     (!fd || l.saleDate === fd) &&
+    (!ft || l.propType === ft) &&
     (!fs || l.status === fs) &&
+    (isNaN(minEq) || (l.equity != null && l.equity >= minEq)) &&
+    (!abs || l.absentee) &&
     (!hideDead || l.status !== "dead") &&
-    (!q || (l.addr + " " + l.defendant + " " + l.plaintiff + " " + l.township + " " + l.sheriff).toLowerCase().includes(q))
+    (!q || (l.addr + " " + (l.owner||"") + " " + l.defendant + " " + l.plaintiff + " " + l.township + " " + l.sheriff).toLowerCase().includes(q))
   );
 }
-function setSort(k) { if (sortKey === k) sortDir *= -1; else { sortKey = k; sortDir = 1; } render(); }
+function setSort(k) {
+  if (sortKey === k) sortDir *= -1; else { sortKey = k; sortDir = (["estValue","judgment","equity"].includes(k) ? -1 : 1); }
+  render();
+}
 function setTab(t) {
-  ["board","pipe","tpl"].forEach(x => {
+  ["board","queue","pipe","tpl"].forEach(x => {
     document.getElementById("view-" + x).style.display = x === t ? "" : "none";
     document.getElementById("tab-" + x).classList.toggle("on", x === t);
   });
   render();
 }
-
+function cmp(a, b, k) {
+  if (k === "saleDate") return daysUntil(a.saleDate) - daysUntil(b.saleDate);
+  const va = a[k], vb = b[k];
+  if (typeof va === "number" || typeof vb === "number") return ((va ?? -Infinity) - (vb ?? -Infinity));
+  return String(va ?? "").localeCompare(String(vb ?? ""));
+}
 function render() {
   renderKPIs();
-  const list = filtered().sort((a, b) => {
-    if (sortKey === "saleDate") return (daysUntil(a.saleDate) - daysUntil(b.saleDate)) * sortDir;
-    return String(a[sortKey]).localeCompare(String(b[sortKey])) * sortDir;
-  });
+  document.querySelectorAll("thead th").forEach(th => th.classList.toggle("sorted", th.dataset.k === sortKey));
+  const list = filtered().sort((a, b) => cmp(a, b, sortKey) * sortDir);
   document.getElementById("count").textContent = list.length + " shown";
   document.getElementById("rows").innerHTML = list.map(l => `
     <tr onclick="openDrawer('${l.sheriff}')">
       <td class="num" style="white-space:nowrap;">${l.saleDate}<br>${daysChip(l)}</td>
-      <td><div class="addr">${esc(l.street)}</div><div class="muted">${esc(l.city)} · PA ${l.zip}</div></td>
-      <td>${esc(l.township.replace(/ (Township|Borough)$/, ""))}</td>
-      <td>${esc(l.defendant)}</td>
-      <td class="muted">${esc(l.plaintiff)}</td>
-      <td class="muted num">${l.sheriff}</td>
+      <td><div class="addr">${esc(l.street)}</div><div class="muted">${esc(l.city)} · PA ${l.zip}${l.sqft ? " · " + Number(l.sqft).toLocaleString() + " sf" : ""}${l.yearBuilt ? " · " + esc(String(l.yearBuilt).trim()) : ""}</div></td>
+      <td><span class="chip type-chip">${esc(l.propType || "—")}</span>${l.absentee ? '<br><span class="chip absentee-chip" style="margin-top:3px;">absentee</span>' : ""}</td>
+      <td style="max-width:180px;">${esc(ownerDisplay(l))}${l.contact && (l.contact.phones||[]).length ? '<br><span class="chip contact-chip" style="margin-top:3px;">☎ have #</span>' : ""}</td>
+      <td class="num">${money(l.estValue)}</td>
+      <td class="num muted">${money(l.judgment)}</td>
+      <td class="num">${l.equity == null ? '<span class="muted">—</span>' : `<span class="${l.equity >= 100000 ? "eq-big" : l.equity > 0 ? "eq-pos" : "muted"}">${money(l.equity)}</span>${l.equityPct != null ? `<br><span class="muted">${l.equityPct}%</span>` : ""}`}</td>
       <td><span class="chip st-${l.status}">${l.status}</span></td>
     </tr>`).join("");
+  renderPipeline();
+  renderQueue();
+}
 
-  // pipeline
+/* ============ pipeline ============ */
+function renderPipeline() {
   const cols = STATUSES.map(st => {
     const items = LEADS.filter(l => l.status === st && daysUntil(l.saleDate) >= -7)
       .sort((a, b) => daysUntil(a.saleDate) - daysUntil(b.saleDate));
@@ -325,10 +419,85 @@ function render() {
         const cls = d < 0 ? "days-urgent" : d === 0 ? "days-soon" : "days-later";
         rem = `<span class="rem ${cls}">${d < 0 ? Math.abs(d) + "d overdue" : d === 0 ? "due today" : "follow-up in " + d + "d"}</span>`;
       }
-      return `<div class="card" onclick="openDrawer('${l.sheriff}')"><div class="a">${esc(l.street)}</div><div class="m">${esc(l.city)} · sale ${l.saleDate} (${daysUntil(l.saleDate)}d)</div>${rem}</div>`;
+      return `<div class="card" onclick="openDrawer('${l.sheriff}')"><div class="a">${esc(l.street)}</div><div class="m">${esc(l.city)} · sale ${l.saleDate} (${daysUntil(l.saleDate)}d) · eq ${money(l.equity)}</div>${rem}</div>`;
     }).join("") + `</div>`;
   }).join("");
   document.getElementById("pipeCols").innerHTML = cols;
+}
+
+/* ============ outreach queue ============ */
+function dueTouch(l) {
+  const d = daysUntil(l.saleDate);
+  if (d == null || d < 0 || ["dead","won","negotiating","responded"].includes(l.status)) return null;
+  const t = l.touches;
+  if (d <= 14 && !t.call) return { key: "call", label: "Call", why: `${d}d to sale — call now` };
+  if (d <= 21 && !t.sms) return { key: "sms", label: "Text", why: `${d}d to sale — text due` };
+  if (d <= 32 && !t.letter2 && t.letter1) return { key: "letter2", label: "Letter 2", why: `${d}d to sale — second letter due` };
+  if (!t.letter1) return { key: "letter1", label: "Letter 1", why: d <= 50 ? `${d}d to sale — first letter due` : `new lead — send intro letter` };
+  return null;
+}
+let QUEUE_CURRENT = [];
+function renderQueue() {
+  const due = [];
+  for (const l of LEADS) {
+    const t = dueTouch(l);
+    if (t) due.push({ l, t });
+  }
+  due.sort((a, b) => daysUntil(a.l.saleDate) - daysUntil(b.l.saleDate));
+  QUEUE_CURRENT = due;
+  const badge = document.getElementById("queueBadge");
+  badge.style.display = due.length ? "" : "none";
+  badge.textContent = due.length;
+  const groups = {};
+  for (const d of due) (groups[d.t.label] = groups[d.t.label] || []).push(d);
+  document.getElementById("queueGroups").innerHTML = Object.entries(groups).map(([label, items]) => `
+    <div class="queue-group"><h3>${label} · ${items.length} due</h3>` + items.map(({ l, t }) => {
+      const phone = l.contact && (l.contact.phones||[])[0];
+      const smsBody = encodeURIComponent(fill(TPL.sms, l));
+      const acts = [];
+      if (t.key.startsWith("letter")) acts.push(`<button class="btn small" onclick="event.stopPropagation();printLetters('${l.sheriff}')">Print letter</button>`);
+      if (phone) {
+        acts.push(`<a class="btn small" href="tel:${phone}" onclick="event.stopPropagation()">Call ${esc(phone)}</a>`);
+        acts.push(`<a class="btn small" href="sms:${phone}?&body=${smsBody}" onclick="event.stopPropagation()">Text</a>`);
+      } else if (t.key === "sms" || t.key === "call") {
+        acts.push(`<span class="muted">no phone — run skip trace</span>`);
+      }
+      acts.push(`<button class="btn small primary" onclick="event.stopPropagation();markTouch('${l.sheriff}','${t.key}')">Mark done</button>`);
+      return `<div class="qcard">
+        <div class="info" onclick="openDrawer('${l.sheriff}')">
+          <div class="a" style="font-weight:600;">${esc(l.street)}, ${esc(l.city)} ${daysChip(l)}</div>
+          <div class="muted">${esc(ownerDisplay(l))} · eq ${money(l.equity)} · ${esc(t.why)}${l.absentee ? " · mail to: " + esc(titleCase(l.ownerMail || "")) : ""}</div>
+        </div>
+        <div class="acts">${acts.join("")}</div>
+      </div>`;
+    }).join("") + `</div>`).join("") || '<div class="note">Nothing due — the queue fills as sale dates approach.</div>';
+}
+function markTouch(sheriff, key) {
+  const l = LEADS.find(x => x.sheriff === sheriff); if (!l) return;
+  l.touches[key] = new Date().toISOString().slice(0, 10);
+  if (["letter1","letter2","sms","call"].includes(key) && l.status === "new") l.status = "contacted";
+  persist(l); render();
+}
+function persist(l) {
+  store.set(l.sheriff, { status: l.status, follow: l.follow, notes: l.notes, touches: l.touches });
+}
+
+/* ============ letters (print batch) ============ */
+function printLetters(onlySheriff) {
+  const items = onlySheriff
+    ? LEADS.filter(l => l.sheriff === onlySheriff)
+    : QUEUE_CURRENT.filter(x => x.t.key.startsWith("letter")).map(x => x.l);
+  if (!items.length) { alert("No letters due in the queue."); return; }
+  document.getElementById("printArea").innerHTML = items.map(l => {
+    const addrBlock = (l.absentee && l.ownerMail)
+      ? titleCase(l.ownerMail)
+      : `${titleCase(l.street)}, ${titleCase(l.city)}, PA ${l.zip}`;
+    return `<div class="letter">${esc(titleCase((l.owner || l.defendant || "").split("&")[0].trim()))}
+${esc(addrBlock)}
+
+${esc(fill(TPL.letter, l))}</div>`;
+  }).join("");
+  window.print();
 }
 
 /* ============ drawer ============ */
@@ -336,27 +505,42 @@ function openDrawer(sheriff) {
   const l = LEADS.find(x => x.sheriff === sheriff); if (!l) return;
   const enc = encodeURIComponent;
   const zq = enc(l.street + " PA " + l.zip);
-  const nameGuess = l.defendant.split(/[&,]| aka | a\/k\/a /i)[0].trim();
+  const nameGuess = (l.owner || l.defendant || "").split(/[&,]| aka | a\/k\/a /i)[0].trim();
+  const c = l.contact;
   const d = document.getElementById("drawer");
   d.innerHTML = `
     <button class="close" onclick="closeDrawer()">×</button>
-    <div class="eyebrow">${esc(l.township)} · Sheriff # ${l.sheriff}</div>
+    <div class="eyebrow">${esc(l.township)} · Sheriff # ${l.sheriff} · ${esc(l.propType || "")}</div>
     <h2>${esc(l.street)}</h2>
     <div class="muted">${esc(l.city)}, PA ${l.zip} · sale ${l.saleDate} ${daysChip(l)}</div>
 
-    <div class="panel"><div class="hd"><span class="eyebrow">Sale facts · CivilView</span></div><div class="bd">
-      <div class="kv">
-        <span class="k">Defendant</span><span>${esc(l.defendant)}</span>
-        <span class="k">Plaintiff</span><span>${esc(l.plaintiff)}</span>
-        <span class="k">Judgment</span><span>${l.judgment ? "$" + Number(l.judgment).toLocaleString() : "— (populates on next scraper run)"}</span>
-        <span class="k">Sale date</span><span>${l.saleDate}</span>
+    <div class="panel"><div class="hd"><span class="eyebrow">Valuation · county assessment × CLR</span></div><div class="bd">
+      <div style="display:flex;gap:26px;flex-wrap:wrap;margin-bottom:10px;">
+        <div><div class="muted">Est. value</div><div class="bigval">${money(l.estValue)}</div></div>
+        <div><div class="muted">Judgment</div><div class="bigval" style="color:var(--ink2)">${money(l.judgment)}</div></div>
+        <div><div class="muted">Est. equity</div><div class="bigval" style="color:${l.equity > 0 ? "var(--ever)" : "var(--rust)"}">${money(l.equity)}${l.equityPct != null ? ` <span style="font-size:13px;">(${l.equityPct}%)</span>` : ""}</div></div>
       </div>
-      <div class="links" style="margin-top:10px;">
-        <a target="_blank" rel="noopener" href="https://salesweb.civilview.com/Sales/SaleDetails?PropertyId=${l.pid}">CivilView detail ↗</a>
+      <div class="kv">
+        <span class="k">Assessed</span><span>${money(l.assessed)} (land use ${esc(l.landUse || "—")})</span>
+        <span class="k">Size</span><span>${l.sqft ? Number(l.sqft).toLocaleString() + " sqft" : "—"}${l.beds ? " · " + esc(String(l.beds).trim()) + " bd" : ""}${l.baths ? " / " + esc(String(l.baths).trim()) + " ba" : ""}${l.yearBuilt ? " · built " + esc(String(l.yearBuilt).trim()) : ""}</span>
+        <span class="k">Last sold</span><span>${l.lastSold ? esc(l.lastSold) + (l.lastPrice ? " for " + money(l.lastPrice) : "") : "—"}</span>
+        <span class="k">Parcel</span><span>${esc(l.parcel || "—")}</span>
       </div>
     </div></div>
 
+    <div class="panel"><div class="hd"><span class="eyebrow">Owner & contact</span></div><div class="bd">
+      <div class="kv">
+        <span class="k">Owner (county)</span><span>${esc(titleCase(l.owner) || "—")}</span>
+        <span class="k">Defendant</span><span>${esc(l.defendant)}</span>
+        <span class="k">Mailing addr</span><span>${esc(titleCase(l.ownerMail) || "—")} ${l.absentee ? '<span class="chip absentee-chip">absentee</span>' : ""}</span>
+        <span class="k">Phones</span><span>${c && (c.phones||[]).length ? c.phones.map(p => `<a href="tel:${esc(p)}">${esc(p)}</a>`).join(" · ") : '<span class="muted">none — run skip trace</span>'}</span>
+        <span class="k">Emails</span><span>${c && (c.emails||[]).length ? c.emails.map(e => `<a href="mailto:${esc(e)}">${esc(e)}</a>`).join(" · ") : '<span class="muted">—</span>'}</span>
+      </div>
+      ${c && (c.phones||[]).length ? `<div class="tpl-btns"><a class="btn small" href="sms:${esc(c.phones[0])}?&body=${enc(fill(TPL.sms, l))}">Text pre-filled SMS</a></div>` : ""}
+    </div></div>
+
     <div class="panel"><div class="hd"><span class="eyebrow">Research links</span></div><div class="bd links">
+      <a target="_blank" rel="noopener" href="https://salesweb.civilview.com/Sales/SaleDetails?PropertyId=${l.pid}">CivilView ↗</a>
       <a target="_blank" rel="noopener" href="https://www.zillow.com/homes/${zq}_rb/">Zillow ↗</a>
       <a target="_blank" rel="noopener" href="https://www.truepeoplesearch.com/results?name=${enc(nameGuess)}&citystatezip=${l.zip}">TruePeopleSearch ↗</a>
       <a target="_blank" rel="noopener" href="https://www.fastpeoplesearch.com/name/${enc(nameGuess.replace(/\s+/g, "-"))}_${l.zip}">FastPeopleSearch ↗</a>
@@ -364,7 +548,8 @@ function openDrawer(sheriff) {
       <a target="_blank" rel="noopener" href="https://propertyrecords.montgomerycountypa.gov/">County records ↗</a>
     </div></div>
 
-    <div class="panel"><div class="hd"><span class="eyebrow">Outreach tracking</span></div><div class="bd">
+    <div class="panel"><div class="hd"><span class="eyebrow">Outreach tracking</span>
+      <span class="muted">${Object.entries(l.touches).map(([k,v]) => k + " " + v).join(" · ") || "no touches yet"}</span></div><div class="bd">
       <label class="muted">Status</label>
       <select id="dStatus">${STATUSES.map(s => `<option ${s === l.status ? "selected" : ""}>${s}</option>`).join("")}</select>
       <label class="muted" style="display:block;margin-top:10px;">Follow-up date</label>
@@ -375,12 +560,13 @@ function openDrawer(sheriff) {
       <span class="muted" id="savedMsg" style="margin-left:8px;"></span>
     </div></div>
 
-    <div class="panel"><div class="hd"><span class="eyebrow">Outreach templates (pre-filled)</span></div><div class="bd">
+    <div class="panel"><div class="hd"><span class="eyebrow">Outreach templates (pre-filled with equity)</span></div><div class="bd">
       <div class="tpl-btns">
         <button class="btn" onclick="showTpl('${l.sheriff}','letter')">Letter</button>
         <button class="btn" onclick="showTpl('${l.sheriff}','sms')">SMS</button>
         <button class="btn" onclick="showTpl('${l.sheriff}','email')">Email</button>
         <button class="btn" onclick="copyTpl()">Copy</button>
+        <button class="btn" onclick="printLetters('${l.sheriff}')">Print letter</button>
       </div>
       <div class="tplout" id="tplout"></div>
     </div></div>`;
@@ -396,43 +582,47 @@ function saveLead(sheriff) {
   l.status = document.getElementById("dStatus").value;
   l.follow = document.getElementById("dFollow").value;
   l.notes = document.getElementById("dNotes").value;
-  store.set(sheriff, { status: l.status, follow: l.follow, notes: l.notes });
+  persist(l);
   document.getElementById("savedMsg").textContent = "Saved ✓";
   render();
 }
 
 /* ============ templates ============ */
 function fill(tpl, l) {
-  const first = l ? l.defendant.split(/[&,]| aka | a\/k\/a /i)[0].trim().split(" ").pop() : "[FirstName]";
+  const eqLine = l && l.equity != null && l.equity > 25000
+    ? `Based on county records, your home may be worth roughly ${money(l.estValue)} — meaningfully more than the ${money(l.judgment)} judgment against it. That difference is YOUR equity, and it is only protected if the home sells before the auction.`
+    : `In many cases, homeowners in this position can sell before the sale date, pay off what's owed, and walk away with money in their pocket.`;
   return tpl
-    .replaceAll("{name}", l ? l.defendant.split(/[&,]/)[0].trim() : "[Owner Name]")
-    .replaceAll("{first}", first)
-    .replaceAll("{street}", l ? l.street : "[Street Address]")
-    .replaceAll("{city}", l ? l.city : "[City]")
-    .replaceAll("{saleDate}", l ? l.saleDate : "[Sale Date]");
+    .replaceAll("{name}", l ? titleCase((l.owner || l.defendant || "").split(/[&,]/)[0].trim()) : "[Owner Name]")
+    .replaceAll("{first}", l ? firstNameOf(l) : "[FirstName]")
+    .replaceAll("{street}", l ? titleCase(l.street) : "[Street Address]")
+    .replaceAll("{city}", l ? titleCase(l.city) : "[City]")
+    .replaceAll("{saleDate}", l ? l.saleDate : "[Sale Date]")
+    .replaceAll("{equityLine}", l ? eqLine : "[Equity paragraph — auto-filled per lead]")
+    .replaceAll("{value}", l && l.estValue ? money(l.estValue) : "[Est. Value]");
 }
 const TPL = {
   letter: `Dear {name},
 
 My name is Elan Elkaim, and I'm a local real estate professional here in Montgomery County. I'm writing because public records show that {street} is scheduled for sheriff sale on {saleDate}.
 
-I know this is a difficult situation, and I want you to know you still have options. In many cases, homeowners in your position can sell their property before the sale date, pay off what's owed, and walk away with money in their pocket — instead of losing everything at auction.
+I know this is a difficult situation, and I want you to know you still have options. {equityLine}
 
-I work with families in this exact situation. If you'd like to explore what your home could sell for and whether there's equity you can protect, I'd be glad to talk — no pressure, no obligation.
+I work with families in this exact situation. If you'd like an honest, no-pressure conversation about what your home could sell for and what your options are, I'd be glad to talk.
 
 You can reach me directly at [PHONE] or [EMAIL].
 
 Respectfully,
 Elan Elkaim
 Elkaim Property Group`,
-  sms: `Hi {first}, this is Elan, a local realtor in Montgomery County. I saw {street} is scheduled for sheriff sale on {saleDate}. You may still be able to sell before then and keep your equity. Happy to explain your options — no pressure. OK to reply STOP to opt out.`,
+  sms: `Hi {first}, this is Elan, a local realtor in Montgomery County. I saw {street} is scheduled for sheriff sale on {saleDate}. You may still be able to sell before then and keep your equity. Happy to explain your options — no pressure. Reply STOP to opt out.`,
   email: `Subject: Options for {street} before {saleDate}
 
 Hi {name},
 
 I'm a local real estate professional in Montgomery County. County records show {street} in {city} is scheduled for sheriff sale on {saleDate}.
 
-Until the sale happens, you typically still have the right to sell your home yourself. If there's equity in the property, selling before the auction can mean walking away with cash instead of losing the home and the equity at sheriff sale.
+{equityLine}
 
 I'd be glad to give you a free, honest assessment of what your home could sell for and what your options look like. No obligation.
 
@@ -456,59 +646,92 @@ function renderTemplatesTab() {
   document.getElementById("tplEmail").textContent = fill(TPL.email, null);
 }
 
-/* ============ export ============ */
-function exportCSV() {
-  const head = ["sheriff","saleDate","street","city","zip","township","defendant","plaintiff","judgment","status","followUp","notes","civilviewUrl"];
-  const rows = LEADS.map(l => [l.sheriff, l.saleDate, l.street, l.city, l.zip, l.township, l.defendant, l.plaintiff, l.judgment ?? "", l.status, l.follow, l.notes, "https://salesweb.civilview.com/Sales/SaleDetails?PropertyId=" + l.pid]);
-  const csv = [head, ...rows].map(r => r.map(c => `"${String(c).replaceAll('"', '""')}"`).join(",")).join("\n");
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(new Blob([csv], { type: "text/csv" }));
-  a.download = "sheriff-sale-leads.csv";
-  a.click();
+/* ============ contacts import (skip-trace results CSV) ============ */
+function parseCSV(text) {
+  const rows = []; let row = [], cur = "", inQ = false;
+  for (let i = 0; i < text.length; i++) {
+    const ch = text[i];
+    if (inQ) {
+      if (ch === '"') { if (text[i+1] === '"') { cur += '"'; i++; } else inQ = false; }
+      else cur += ch;
+    } else if (ch === '"') inQ = true;
+    else if (ch === ",") { row.push(cur); cur = ""; }
+    else if (ch === "\n" || ch === "\r") {
+      if (cur !== "" || row.length) { row.push(cur); rows.push(row); row = []; cur = ""; }
+      if (ch === "\r" && text[i+1] === "\n") i++;
+    } else cur += ch;
+  }
+  if (cur !== "" || row.length) { row.push(cur); rows.push(row); }
+  return rows;
+}
+function importContacts(input) {
+  const f = input.files[0]; if (!f) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    const rows = parseCSV(reader.result);
+    if (rows.length < 2) { alert("Couldn't read that CSV."); return; }
+    const head = rows[0].map(h => h.toLowerCase().trim());
+    const shIdx = head.findIndex(h => h.includes("sheriff"));
+    const phoneIdx = head.map((h, i) => /phone|mobile|cell|landline/.test(h) ? i : -1).filter(i => i >= 0);
+    const emailIdx = head.map((h, i) => h.includes("email") ? i : -1).filter(i => i >= 0);
+    if (shIdx < 0) { alert('No "Sheriff #" column found — export the skip-trace CSV from this dashboard so results keep that column.'); return; }
+    const local = cstore.load();
+    let count = 0;
+    for (const r of rows.slice(1)) {
+      const sh = (r[shIdx] || "").trim(); if (!sh) continue;
+      const phones = [...new Set(phoneIdx.map(i => (r[i] || "").trim()).filter(Boolean))];
+      const emails = [...new Set(emailIdx.map(i => (r[i] || "").trim()).filter(Boolean))];
+      if (!phones.length && !emails.length) continue;
+      local[sh] = { phones, emails, source: "import", date: new Date().toISOString().slice(0,10) };
+      count++;
+    }
+    cstore.save(local);
+    Object.assign(CONTACTS, local);
+    LEADS.forEach(l => l.contact = CONTACTS[l.sheriff] || l.contact);
+    alert(count + " contacts imported. Phones/emails now show on leads (saved in this browser).");
+    render();
+  };
+  reader.readAsText(f);
+  input.value = "";
 }
 
-/* skip-trace export: BatchSkipTracing-format CSV of currently filtered leads.
-   Entities/estates (LLCs, unknown heirs, trusts) are excluded — they can't be skip traced. */
-const SST_CITIES = ["Abington aka Roslyn","Amber aka Maple Glen","Eagleville a/k/a Norristown","Jenkintown aka Meadowbrook","Norristown aka Eagleville","Bala Cynwyd","Blue Bell","Bryn Mawr","East Greenville","East Norriton","Elkins Park","Fort Washington","Gulph Mills","Huntingdon Valley","King of Prussia","Lafayette Hill","Melrose Park","Merion Station","Moreland Township","North Wales","Plymouth Meeting","Red Hill","Upper Hanover","West Conshohocken","Willow Grove","Abington","Ambler","Ardmore","Ardsley","Audubon","Bridgeport","Cheltenham","Collegeville","Conshohocken","Eagleville","Gilbertsville","Glenside","Harleysville","Hatboro","Hatfield","Horsham","Jenkintown","Lansdale","Laverock","Melrose","Montgomeryville","Narberth","Norristown","Pennsburg","Perkiomenville","Phoenixville","Pottstown","Roslyn","Royersford","Rydal","Schwenksville","Souderton","Stowe","Telford","Trappe","Villanova","Wayne","Wyncote","Wyndmoor","Wynnewood"];
-const SST_ENTITY = /llc|l\.l\.c|inc\b|corp|company|estate of|unknown heirs|unknow heirs|successors|association|church|trust\b|holdings|realty|construction|enterpri|school|borough of|pentecosta|and son/i;
-function sstSplitCity(l) {
-  let rest = l.street, city = "";
-  for (const c of SST_CITIES) {
-    if (rest.toLowerCase().endsWith(" " + c.toLowerCase())) {
-      city = c.split(/\s+(?:aka|a\/k\/a)\s+/i)[0];
-      rest = rest.slice(0, rest.length - c.length - 1);
-      break;
-    }
-  }
-  return { street: rest.trim(), city: city || l.city };
-}
-function sstName(def) {
-  let p = def.replace(/\.{3}$/, "").split(/\s*(?:&|,| and )\s*/i)[0].trim();
+/* ============ exports ============ */
+const SST_ENTITY = /llc|l\.l\.c|inc\b|corp|company|estate of|unknown heirs|unknow heirs|successors|association|church|trust\b|holdings|realty|construction|enterpri|school|borough of|pentecosta|and son|foundation/i;
+function sstName(src) {
+  let p = String(src || "").replace(/\.{3}$/, "").split(/\s*(?:&|,| and )\s*/i)[0].trim();
   p = p.split(/\s+(?:aka|a\/k\/a|f\/k\/a|fka)\s+/i)[0].trim();
   const t = p.replace(/[.]/g, "").split(/\s+/).filter(Boolean);
   if (t.length === 1) return { first: "", last: t[0] };
-  return { first: t[1], last: t[0] }; // CivilView format: Last First Middle
+  return { first: t[1], last: t[0] };
 }
 function exportSkipTrace() {
   const list = filtered();
   const qq = v => `"${String(v ?? "").replaceAll('"', '""')}"`;
-  const head = ["First Name","Last Name","Mailing Address","Mailing City","Mailing State","Mailing Zip","Property Address","Property City","Property State","Property Zip","Sheriff #","Sale Date","Judgment"];
+  const head = ["First Name","Last Name","Mailing Address","Mailing City","Mailing State","Mailing Zip","Property Address","Property City","Property State","Property Zip","Sheriff #","Sale Date","Judgment","Est Value","Equity"];
   const rows = []; let skipped = 0;
   for (const l of list) {
-    if (SST_ENTITY.test(l.defendant)) { skipped++; continue; }
-    const n = sstName(l.defendant);
-    const s = sstSplitCity(l);
-    rows.push([n.first, n.last, s.street, s.city, "PA", l.zip, s.street, s.city, "PA", l.zip, l.sheriff, l.saleDate, l.judgment ?? ""].map(qq).join(","));
+    const src = l.owner || l.defendant;
+    if (SST_ENTITY.test(src || "")) { skipped++; continue; }
+    const n = sstName(src);
+    rows.push([n.first, n.last, l.street, l.city, "PA", l.zip, l.street, l.city, "PA", l.zip, l.sheriff, l.saleDate, l.judgment ?? "", l.estValue ?? "", l.equity ?? ""].map(qq).join(","));
   }
-  const csv = [head.map(qq).join(",")].concat(rows).join("\n");
+  dl([head.map(qq).join(",")].concat(rows).join("\n"), "skiptrace-" + new Date().toISOString().slice(0, 10) + ".csv");
+  alert(rows.length + " people exported." + (skipped ? " " + skipped + " entity/estate leads excluded." : ""));
+}
+function exportCSV() {
+  const qq = v => `"${String(v ?? "").replaceAll('"', '""')}"`;
+  const head = ["sheriff","saleDate","street","city","zip","township","propType","owner","ownerMail","absentee","defendant","plaintiff","judgment","assessed","estValue","equity","equityPct","sqft","yearBuilt","phones","emails","status","followUp","notes","civilviewUrl"];
+  const rows = LEADS.map(l => [l.sheriff, l.saleDate, l.street, l.city, l.zip, l.township, l.propType, l.owner, l.ownerMail, l.absentee ? "yes" : "", l.defendant, l.plaintiff, l.judgment ?? "", l.assessed ?? "", l.estValue ?? "", l.equity ?? "", l.equityPct ?? "", l.sqft ?? "", l.yearBuilt ?? "", (l.contact?.phones || []).join(" "), (l.contact?.emails || []).join(" "), l.status, l.follow, l.notes, "https://salesweb.civilview.com/Sales/SaleDetails?PropertyId=" + l.pid]);
+  dl([head, ...rows].map(r => r.map(c => `"${String(c).replaceAll('"', '""')}"`).join(",")).join("\n"), "sheriff-sale-leads.csv");
+}
+function dl(text, name) {
   const a = document.createElement("a");
-  a.href = URL.createObjectURL(new Blob([csv], { type: "text/csv" }));
-  a.download = "skiptrace-" + new Date().toISOString().slice(0, 10) + ".csv";
+  a.href = URL.createObjectURL(new Blob([text], { type: "text/csv" }));
+  a.download = name;
   a.click();
-  alert(rows.length + " people exported for skip tracing." + (skipped ? " " + skipped + " entity/estate leads excluded (research those manually via the lead links)." : ""));
 }
 
-/* auto-open if already unlocked (must run after all declarations above) */
+/* auto-open if already unlocked (must stay AFTER all declarations above) */
 if (sessionStorage.getItem("ss_gate") === "1") openApp();
 </script>
 </body>

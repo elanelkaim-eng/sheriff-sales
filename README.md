@@ -1,55 +1,64 @@
-# Sheriff Sale Engine — Deploy Guide
+# Sheriff Sale Engine — v2
 
-Live dashboard of Montgomery County (PA) sheriff sale listings with outreach
-tracking, auto-refreshed daily by GitHub Actions.
+Live dashboard of Montgomery County (PA) sheriff sale listings, auto-refreshed
+daily by GitHub Actions and enriched with county assessment data.
 
-**Passcode:** `elkaim26` (to change it, see "Change the passcode" below)
+**Live:** https://elanelkaim-eng.github.io/sheriff-sales/ · Passcode: `elkaim26`
 
-## Go live (one time, ~10 minutes)
+## What the daily scraper does (6:15am ET)
 
-1. **Create a GitHub account** (if needed) at github.com — free.
-2. **Create a new repository**: click "+" → New repository → name it
-   `sheriff-sales` → set to **Public** (required for free GitHub Pages) →
-   Create. (The data shown is already public county record; the passcode
-   gate keeps casual visitors out and the site is marked noindex.)
-3. **Upload this folder's contents**: on the repo page → "uploading an
-   existing file" → drag in everything inside `sheriff-sale-site/`
-   (index.html, the data/, scraper/, and .github/ folders) → Commit.
-   - If the web uploader won't take the `.github` folder, create the file
-     manually: Add file → Create new file → type
-     `.github/workflows/scrape.yml` as the name and paste the file contents.
-4. **Turn on Pages**: repo → Settings → Pages → Source: "Deploy from a
-   branch" → Branch: `main`, folder `/ (root)` → Save.
-5. Wait ~2 minutes. Your dashboard is live at:
-   `https://YOUR-USERNAME.github.io/sheriff-sales/`
+1. Scrapes CivilView for all listings + judgment amounts.
+2. Enriches every lead from Montgomery County's Board of Assessment GIS:
+   - Assessed value → **estimated market value** (assessment × common level ratio)
+   - **Estimated equity** = est. value − judgment
+   - Property type (residential / multi-family / commercial / …), sqft,
+     year built, beds/baths, last sale
+   - Full owner name + **owner mailing address** (absentee detection)
+3. Optional: auto skip-traces new leads (see below).
 
-## Daily auto-refresh
+## Common level ratio — update every July
 
-The workflow in `.github/workflows/scrape.yml` runs every morning (~6:15am
-ET), scrapes CivilView, fills in judgment amounts + full owner names, and
-republishes. To run it on demand: repo → Actions → "Daily sheriff sale
-scrape" → Run workflow.
+`CLR_FACTOR` in `scrape.py` is **3.36** (official PA factor for Montgomery
+County, July 1 2026 – June 30 2027). Each July, search "PA common level ratio
+factors <year>" and update the constant. Values are estimates (±10–15%) —
+always verify before making an offer.
 
-The first run replaces the seed data (which has names truncated by the
-list view) with complete details.
+## Auto skip tracing (optional)
+
+With a BatchData account (batchdata.io, pay-as-you-go wallet, roughly
+$0.07–0.18 per matched record):
+
+1. Get an API key from the BatchData dashboard.
+2. Repo → Settings → Secrets and variables → Actions → New repository secret:
+   name `BATCHDATA_API_KEY`, value = the key.
+3. Add `BATCHDATA_API_KEY: ${{ secrets.BATCHDATA_API_KEY }}` under `env:` of
+   the "Run scraper" step in `.github/workflows/scrape.yml`.
+
+Each morning, any NEW person-owned lead gets skip-traced once; phones/emails
+land in `contacts.json` and appear on the dashboard with tap-to-call /
+pre-filled text links. Entities (LLCs, estates, unknown heirs) are skipped.
+Note: the API request format was written against BatchData's documented
+endpoint; on first run check the Actions log — a field rename may be needed.
+
+Manual route (no API): dashboard → filter leads → "Skip-trace CSV" → upload to
+batchskiptracing.com → download results → dashboard "Import contacts".
+Imported contacts save per-browser.
+
+## Outreach queue
+
+The "Outreach queue" tab computes which touch is due per lead from days to
+sale: letter at ~45d → second letter at ~30d → text at ~21d → call at ~14d.
+"Print letters" generates personalized letters (merged with name, equity and
+sale date; mailed to the owner's mailing address for absentee owners).
+SMS: always send texts manually (TCPA) — the queue pre-fills them.
 
 ## Change the passcode
 
-1. Pick a new passcode, e.g. `mynewcode`.
-2. Get its SHA-256 hash: on a Mac, Terminal → `echo -n "mynewcode" | shasum -a 256`
-3. In `index.html`, replace the value of `GATE_HASH` with the new hash and
-   update the file:// fallback string on the `const ok =` line.
+`echo -n "newcode" | shasum -a 256` → replace `GATE_HASH` in index.html and
+the file:// fallback string.
 
-## How outreach tracking works
+## Phase 3 ideas
 
-Statuses, notes, and follow-up dates save in the browser (localStorage),
-keyed by sheriff number — so they survive daily data refreshes. They are
-per-device: you and Armen each keep your own board unless you export/share
-CSV. (A shared backend is the natural Phase 2 upgrade.)
-
-## Phase 2 ideas (from the tech handoff + Armen's prototype)
-
-- Zillow value + equity % via RapidAPI (key goes in the scraper)
-- Contact enrichment: BatchSkipTracing bulk upload from the CSV export
-- More counties: Chester/Philadelphia/Berks (Bid4Assets), Bucks/Delaware (PDF)
-- Shared status backend so the team sees one pipeline
+Zillow Zestimate overlay (RapidAPI), auto-mail via Lob, more counties
+(Chester/Philly/Berks via Bid4Assets; Bucks/Delaware PDFs), shared status
+backend so the whole team sees one pipeline.
